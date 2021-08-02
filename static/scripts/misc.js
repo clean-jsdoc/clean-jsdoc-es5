@@ -64,10 +64,20 @@ function copyFunction (id) {
             '<div class="code-lang-name-container"><div class="code-lang-name">' +
             `${langName.toLocaleUpperCase()}</div></div>`;
 
+        // Extract CodePen prefill data
+        const prefills = document.querySelectorAll('.codepen-data');
+        let codepenLink = '';
+
+        if (langName === 'javascript' && prefills[i]) {
+            codepenLink =
+                '<div><form action="https://codepen.io/pen/define" method="POST" target="_blank" class="codepen-form">' +
+                `${prefills[i].innerHTML}</form></div>`;
+        }
+
         // appending everything to the current pre element
         allPre[i].innerHTML +=
             '<div class="pre-top-bar-container">' +
-            `${langNameDiv}${langName.length ? copyToClipboard : ''}</div>`;
+            `${langNameDiv}${langName.length ? codepenLink + copyToClipboard : ''}</div>`;
         allPre[i].setAttribute('id', id);
     }
 })();

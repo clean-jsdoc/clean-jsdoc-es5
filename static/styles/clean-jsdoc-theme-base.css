@@ -260,9 +260,8 @@ pre {
 }
 
 .prettyprint.source .pre-top-bar-container {
-    align-items: center;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     left: 0;
     padding: 0.3125rem 1.5rem;
     position: absolute;
@@ -284,6 +283,16 @@ pre {
 .code-copy-icon-container>div {
     margin-top: 0.25rem;
     position: relative;
+}
+
+form.codepen-form {
+    display: flex;
+    padding: 0 0.5rem;
+}
+
+.codepen-form input {
+    height: 2rem;
+    width: 2rem;
 }
 
 .sm-icon {

@@ -556,9 +556,12 @@ function buildNav(members) {
     nav += '<div class="sidebar-main-content" id="sidebar-main-content">';
     const seen = {};
     const seenTutorials = {};
-    const menu = themeOpts.menu || undefined;
 
-    if (menu !== undefined) {
+    const menu = themeOpts.menu || undefined;
+    const menuLocation = themeOpts.menuLocation || 'up';
+
+
+    if (menu !== undefined && menuLocation === 'up') {
         nav += buildMenuNav(menu);
     }
     nav += buildMemberNav(members.tutorials, 'Tutorials', seenTutorials, linktoTutorial, true);
@@ -570,6 +573,9 @@ function buildNav(members) {
     nav += buildMemberNav(members.mixins, 'Mixins', seen, linkto);
     nav += buildMemberNav(members.interfaces, 'Interfaces', seen, linkto);
     nav += buildMemberNav(members.globals, 'Global', seen, linkto);
+    if (menu !== undefined && menuLocation === 'down') {
+        nav += buildMenuNav(menu);
+    }
     nav += '</div>';
 
     return nav;
@@ -863,6 +869,7 @@ exports.publish = function(taffyData, opts, tutorials) {
     // once for all
     view.nav = buildNav(members);
     view.searchList = searchListArray;
+    view.codepen = themeOpts.codepen || undefined;
     attachModuleSymbols(find({ 'longname': { 'left': 'module:' } }), members.modules);
 
     // generate the pretty-printed source files first so other pages can link to them
