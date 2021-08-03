@@ -42,7 +42,7 @@ describe('Line numbers', () => {
         expect(lineStyle.parsed.hex).not.toEqual(plainStyle.parsed.hex);
     });
 
-    afterEach(() => {
+    afterAll(() => {
       jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
     });
 });
