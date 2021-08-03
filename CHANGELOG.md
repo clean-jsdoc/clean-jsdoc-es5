@@ -1,3 +1,10 @@
+## 4.1.0
+
+### Added
+- two new options from upstream:
+  + [`codepen`][] - adds an ["Edit on CodePen" button](https://heredocs.io/clean-jsdoc-theme/#codepen_option) to code examples
+  + [`menuLocation`][] - sets the position of the [user-defined link menu](https://heredocs.io/clean-jsdoc-theme/#basic)
+
 ## 4.0.1
 
 ### Fixed
@@ -268,3 +275,5 @@
 [fold navigation link hierarchies]: https://github.com/ankitskvmdam/clean-jsdoc-theme/commit/6d6f93123ac51bbb9a2f9bd3ee185deca56b9fd9
 [its own section]: https://github.com/ankitskvmdam/clean-jsdoc-theme/commit/277998015dd209fa548a89081001617df26a6753
 [npm installation steps]: https://github.com/rdipardo/clean-jsdoc-theme#quick-start
+[`menuLocation`]: https://github.com/ankitskvmdam/clean-jsdoc-theme/commit/36c86487b16c1971f6ada2ae56213e1212caf3c5
+[`codepen`]: https://github.com/ankitskvmdam/clean-jsdoc-theme/commit/c309ebac641697d15f0ee3de2a5da9413aff9fec#diff-5e733ad892a637d40e61205f71cd63352d98d5ddfd929ab000003eb1eee67fbc
