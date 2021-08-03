@@ -84,6 +84,7 @@ const frequencyOf = (list, group, key, xform = (x, _, k) => x[`${k}`] += 1) => {
 * @returns {number} The sum of the values of each object's common property
 * @example
 * const fn = (x, y, k) => x[`${k}`] + y[`${k}`]
+* @example <caption>Using an aggregating function</caption>
 * const h1 = {'height': 7}
 * const h2 = {'height': 3}
 * const totalHeight = fn(h1, h2, 'height')

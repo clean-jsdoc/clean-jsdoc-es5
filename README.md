@@ -33,6 +33,7 @@
     * [remote_assets](#remote_assets_option)
     * [remote_scripts](#remote_scripts_option)
     * [overlay_scrollbar](#overlay_scrollbar_option)
+    + [codepen](#codepen_option)
 - [Testing](#testing)
 - [License](#license)
 
@@ -145,17 +146,20 @@ _All options must be defined under `opts.theme_opts` in your `.jsdoc.json`_
 ### Basic
 
 | name           | purpose                                             | type         | default                            | options                                       |
-|:--------------:|:---------------------------------------------------:|:------------:|:----------------------------------:|:---------------------------------------------:|
+|:--------------:|:----------------------------------------------------|:------------:|:----------------------------------:|:---------------------------------------------:|
 | `theme`        | the overall style theme                             | string       | `"light"`                          | `"light"`, `"dark"`                           |
 | `search`       | enable fuzzy search using [Fuse.js][]               | bool         | `true`                             | `true`, `false`                               |
+| `menuLocation` | sets the location of the optional [external links menu](#menu_option) relative to the doc navigation menu &#91;1&#93; | string | `"up"` | `"up"`, `"down"` |
 | `langNames`    | display language names in code blocks               | bool         | `true`                             | `true`, `false`                               |
 | `title`        | the name of the home link to display on the nav bar | HTML string  | `"README"`                         | any valid HTML markup, or just a plain string |
 | `footer`       | a footer to display in the page layout              | HTML string  | JSDoc version, date and theme info | any valid HTML markup                         |
 | `inline_style` | inline CSS for the `head` of the page layout        | CSS string   | `null`                             | any valid CSS markup                          |
-| `asset_paths`   | a list of folders to search for scripts and CSS files  | &#91;"path/to/assets", ...&#93;   | `[]`       | >=1 path, relative to your `.jsdoc.json` &#91;&ast;&#93;  |
+| `asset_paths`  | a list of folders to search for scripts and CSS files  | &#91;"path/to/assets", ...&#93;   | `[]`       | >=1 path, relative to your `.jsdoc.json` &#91;2&#93; |
 
 <hr/>
-&#91;&ast;&#93; non-existent paths, or paths outside the working directory, will be ignored with a warning message
+&#91;1&#93; "up" == above navigation menu, "down" == below. Requires the <a href="#menu_option">menu option</a> to be set
+
+&#91;2&#93; non-existent paths, or paths outside the working directory, will be ignored with a warning message
 
 ### Advanced
 
@@ -191,7 +195,7 @@ A list of hyperlinks to add to the navigation bar, e.g.
   "menu": [
     {
       "title": "Website",
-      "link": "https://heredocs.com",
+      "link": "https://heredocs.io",
       "target": "_blank",
       "class": "some-class",
       "id": "some-id"
@@ -303,6 +307,25 @@ None. Simply passing an empty object will activate this feature.
 
 ##### Optional properties
 Any option supported by [OverlayScrollbars].
+
+
+#### `"codepen": { "options": {} }` <a id="codepen_option"></a>
+Puts an "Edit on CodePen" button next to code snippets in `@example` sections.
+
+```json
+"codepen": {
+  "options": {
+    "js_external": "https://code.jquery.com/jquery-3.6.0.min.js",
+    "js_pre_processor": "babel"
+  }
+}
+```
+
+##### Required properties
+None. Simply passing an empty object will activate this feature.
+
+##### Optional properties
+Any valid [CodePen prefill option](https://blog.codepen.io/documentation/prefill/#all-the-json-options-0).
 
 
 ## Testing

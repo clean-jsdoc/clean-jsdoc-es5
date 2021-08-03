@@ -26,7 +26,7 @@
             "langNames": false,
             "project": {
                 "title": "clean-jsdoc",
-                "version": "4.0.1",
+                "version": "4.1.0",
                 "repo": "https://github.com/rdipardo/clean-jsdoc-theme"
             },
             "meta": [
@@ -55,7 +55,13 @@
                     "autoUpdate": false
                 }
             },
-            "inline_style": ".readme img { max-width: 900px; }"
+            "inline_style": ".readme img { max-width: 900px; }",
+            "codepen": {
+                "options": {
+                    "editors": "001",
+                    "js_pre_processor": "babel"
+                }
+            }
         }
     }
 }
