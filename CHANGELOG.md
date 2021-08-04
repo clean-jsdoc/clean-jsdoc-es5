@@ -1,3 +1,8 @@
+## 4.1.1
+
+### Fixed
+- remove unmatched `</div>` from `@example` template
+
 ## 4.1.0
 
 ### Added
