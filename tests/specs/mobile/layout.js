@@ -76,7 +76,7 @@ describe('Mobile page layout', () => {
         expect(await searchBox.isDisplayedInViewport()).toBe(false);
     });
 
-    afterEach(() => {
+    afterAll(() => {
       jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
     });
 });

@@ -81,7 +81,7 @@ describe('Page layout', () => {
         expect(title).toContain('Tree');
     });
 
-    afterEach(() => {
+    afterAll(() => {
       jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
     });
 });
