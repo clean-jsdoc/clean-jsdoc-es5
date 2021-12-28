@@ -435,7 +435,8 @@ function overlayScrollbarOptions() {
 }
 
 function getTheme() {
-    const theme = themeOpts.theme || 'light';
+    const themeName = themeOpts.theme && themeOpts.theme.toLowerCase();
+    const theme = !themeName || themeName === 'dynamic' ? 'light' : themeName;
     const baseThemeName = 'clean-jsdoc-theme';
     const themeSrc = `${baseThemeName}-${theme}.css`.trim();
 
