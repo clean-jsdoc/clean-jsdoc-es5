@@ -11,7 +11,8 @@ const babel = require('@babel/core');
 const glob = require('glob');
 const minify = require('minify');
 
-const { htmlsafe, linkto, resolveAuthorLinks } = helper;
+const { linkto, resolveAuthorLinks } = helper;
+const htmlsafe = src => helper.htmlsafe(src).replace(/>/gu, '&gt;');
 const hasOwnProp = Object.prototype.hasOwnProperty;
 const themeOpts = env && env.opts && env.opts.theme_opts || {};
 const defaultOpts = env && env.conf.templates && env.conf.templates.default || {};
@@ -381,9 +382,16 @@ function buildMenuNav(menu) {
 
         c += ' menu-link';
 
-      m += '<li class="menu-li">' +
-            `<a href="${item.link}" class="${c}" id="${id}" target="${target}">` +
-            `${item.title}</a></li>`;
+      m += `<li class="menu-li"><a href="${item.link}" class="${c}"`;
+
+      if (id) {
+          m += ` id="${id}"`;
+      }
+      if (target) {
+          m += ` target="${target}">`;
+      }
+
+      m += `${item.title}</a></li>`;
     });
 
     m += '</ul>';
@@ -487,7 +495,7 @@ function buildMemberNav({ items, itemHeading, itemsSeen, linktoFn, sectionName }
                 const accordionId = Math.floor(Math.random() * 10000000);
                 const linkTitle = linktoFn(item.longname, item.name.replace(/^(module:)/iu, ''));
 
-                itemsNav += `<li class=${accordionClassName} id=${accordionId}>`;
+                itemsNav += `<li class=${accordionClassName} id="${accordionId}">`;
 
                 if (methods.length) {
                     itemsNav += `<div class="accordion-heading child">${
@@ -506,7 +514,7 @@ function buildMemberNav({ items, itemHeading, itemsSeen, linktoFn, sectionName }
                 }
 
                 if (methods.length) {
-                    itemsNav += '<ul class=\'methods accordion-content\'>';
+                    itemsNav += '<ul class="methods accordion-content">';
 
                     methods.forEach(method => {
                         let name = method.longname.split('#');
@@ -521,7 +529,7 @@ function buildMemberNav({ items, itemHeading, itemsSeen, linktoFn, sectionName }
                                 'link': linkto(method.longname, name)
                             }));
                         }
-                        itemsNav += '<li data-type=\'method\'>';
+                        itemsNav += '<li data-type="method">';
                         itemsNav += linkto(method.longname, method.name);
                         itemsNav += '</li>';
                     });
