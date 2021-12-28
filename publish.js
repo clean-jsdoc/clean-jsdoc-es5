@@ -24,6 +24,30 @@ const externalAssets = themeOpts.remote_assets || [];
 let outdir = path.normalize(env.opts.destination);
 let data;
 let view;
+const SECTION_TYPE = {
+    'Classes': 'Classes',
+    'Modules': 'Modules',
+    'Externals': 'Externals',
+    'Events': 'Events',
+    'Namespaces': 'Namespaces',
+    'Mixins': 'Mixins',
+    'Tutorials': 'Tutorials',
+    'Interfaces': 'Interfaces',
+    'Global': 'Global',
+    'Menu': 'Menu'
+};
+
+const defaultSections = [
+    SECTION_TYPE.Modules,
+    SECTION_TYPE.Classes,
+    SECTION_TYPE.Externals,
+    SECTION_TYPE.Events,
+    SECTION_TYPE.Namespaces,
+    SECTION_TYPE.Mixins,
+    SECTION_TYPE.Tutorials,
+    SECTION_TYPE.Interfaces,
+    SECTION_TYPE.Global
+];
 
 function copyStaticFolder() {
     const staticDir = themeOpts.asset_paths || [];
@@ -343,6 +367,10 @@ function attachModuleSymbols(doclets, modules) {
 }
 
 function buildMenuNav(menu) {
+    if (menu === undefined) {
+        return '';
+    }
+
     let m = '<ul>';
 
     menu.forEach(item => {
@@ -430,17 +458,20 @@ function getLayoutOptions() {
     };
 }
 
-function buildMemberNav(items, itemHeading, itemsSeen, linktoFn) {
+function buildMemberNav({ items, itemHeading, itemsSeen, linktoFn, sectionName }) {
     let nav = '';
 
     if (items.length) {
         let itemsNav = '';
 
         items.forEach(item => {
-            const methods = find({
-                'kind': 'function',
-                'memberof': item.longname
-            });
+            const methods =
+                [SECTION_TYPE.Tutorials, SECTION_TYPE.Global].includes(sectionName) ?
+                [] :
+                find({
+                    'kind': 'function',
+                    'memberof': item.longname
+                });
 
             if (!hasOwnProp.call(item, 'longname')) {
                 itemsNav += `<li>${linktoFn('', item.name)}`;
@@ -556,26 +587,113 @@ function buildNav(members) {
     nav += '<div class="sidebar-main-content" id="sidebar-main-content">';
     const seen = {};
     const seenTutorials = {};
+    const seenGlobal = {};
 
     const menu = themeOpts.menu || undefined;
     const menuLocation = themeOpts.menuLocation || 'up';
+    const sectionsOrder =
+        themeOpts.sections ?
+            themeOpts.sections.map(s => `${s.charAt(0).toUpperCase()}${s.slice(1).toLowerCase()}`) :
+            defaultSections;
 
+    const sections = {
+        [SECTION_TYPE.Menu]: buildMenuNav(menu),
 
-    if (menu !== undefined && menuLocation === 'up') {
-        nav += buildMenuNav(menu);
+        [SECTION_TYPE.Modules]: buildMemberNav({
+            'itemHeading': 'Modules',
+            'items': members.modules,
+            'itemsSeen': {},
+            'linktoFn': linkto,
+            'sectionName': SECTION_TYPE.Modules
+        }),
+
+        [SECTION_TYPE.Classes]: buildMemberNav({
+            'itemHeading': 'Classes',
+            'items': members.classes,
+            'itemsSeen': seen,
+            'linktoFn': linkto,
+            'sectionName': SECTION_TYPE.Classes
+        }),
+
+        [SECTION_TYPE.Externals]: buildMemberNav({
+            'itemHeading': 'Externals',
+            'items': members.externals,
+            'itemsSeen': seen,
+            'linktoFn': linktoExternal,
+            'sectionName': SECTION_TYPE.Externals
+        }),
+
+        [SECTION_TYPE.Events]: buildMemberNav({
+            'itemHeading': 'Events',
+            'items': members.events,
+            'itemsSeen': seen,
+            'linktoFn': linkto,
+            'sectionName': SECTION_TYPE.Events
+        }),
+
+        [SECTION_TYPE.Namespaces]: buildMemberNav({
+            'itemHeading': 'Namespaces',
+            'items': members.namespaces,
+            'itemsSeen': seen,
+            'linktoFn': linkto,
+            'sectionName': SECTION_TYPE.Namespaces
+        }),
+
+        [SECTION_TYPE.Mixins]: buildMemberNav({
+            'itemHeading': 'Mixins',
+            'items': members.mixins,
+            'itemsSeen': seen,
+            'linktoFn': linkto,
+            'sectionName': SECTION_TYPE.Mixins
+        }),
+
+        [SECTION_TYPE.Tutorials]: buildMemberNav({
+            'itemHeading': 'Tutorials',
+            'items': members.tutorials,
+            'itemsSeen': seenTutorials,
+            'linktoFn': linktoTutorial,
+            'sectionName': SECTION_TYPE.Tutorials
+        }),
+
+        [SECTION_TYPE.Interfaces]: buildMemberNav({
+            'itemHeading': 'Interfaces',
+            'items': members.interfaces,
+            'itemsSeen': seen,
+            'linktoFn': linkto,
+            'sectionName': SECTION_TYPE.Interfaces
+        }),
+
+        [SECTION_TYPE.Global]: buildMemberNav({
+            'itemHeading': 'Global',
+            'items': members.globals,
+            'itemsSeen': seenGlobal,
+            'linktoFn': linkto,
+            'sectionName': SECTION_TYPE.Global
+        })
+    };
+
+    if (menuLocation === 'up') {
+        nav += sections.Menu;
     }
-    nav += buildMemberNav(members.tutorials, 'Tutorials', seenTutorials, linktoTutorial, true);
-    nav += buildMemberNav(members.classes, 'Classes', seen, linkto);
-    nav += buildMemberNav(members.modules, 'Modules', {}, linkto);
-    nav += buildMemberNav(members.externals, 'Externals', seen, linktoExternal);
-    nav += buildMemberNav(members.events, 'Events', seen, linkto);
-    nav += buildMemberNav(members.namespaces, 'Namespaces', seen, linkto);
-    nav += buildMemberNav(members.mixins, 'Mixins', seen, linkto);
-    nav += buildMemberNav(members.interfaces, 'Interfaces', seen, linkto);
-    nav += buildMemberNav(members.globals, 'Global', seen, linkto);
-    if (menu !== undefined && menuLocation === 'down') {
-        nav += buildMenuNav(menu);
+
+    sectionsOrder.forEach(section => {
+        if (SECTION_TYPE[section] !== undefined) {
+            logger.info('Adding %s section', section);
+            if (section !== 'Menu') {
+                nav += sections[section];
+            }
+        } else {
+            const errorMsg = `While building nav. Section name: '${section}' is not recognized.
+            Accepted sections are: ${defaultSections.join(', ')}`;
+
+            logger.warn(errorMsg);
+        }
+    });
+
+    if (menuLocation === 'down') {
+        nav += sections.Menu;
     }
+
     nav += '</div>';
 
     return nav;
@@ -670,7 +788,12 @@ exports.publish = function(taffyData, opts, tutorials) {
             doclet.examples = doclet.examples.map(example => {
                 let caption, code;
 
-                if (example.match(/^\s*<caption>([\s\S]+?)<\/caption>(\s*[\n\r])([\s\S]+)$/iu)) {
+                if (example === undefined) {
+                    return {
+                        'caption': '',
+                        'code': ''
+                    };
+                } else if (example.match(/^\s*<caption>([\s\S]+?)<\/caption>(\s*[\n\r])([\s\S]+)$/iu)) {
                     caption = RegExp.$1;
                     code = RegExp.$3;
                 }
