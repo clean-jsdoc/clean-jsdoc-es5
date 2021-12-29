@@ -64,7 +64,7 @@
     <script>
       if (window.matchMedia) {
         var styles = Array.prototype.slice.call(document.querySelectorAll('link[rel="stylesheet"]'))
-        var theme = styles.find(s => /(theme).*(light|dark).*\.css$/i.test(s.href))
+        var theme = styles.find(function(s) { return /(theme).*(light|dark).*\.css$/i.test(s.href) })
         if (theme) {
           theme.href =
             matchMedia('(prefers-color-scheme: dark)').matches
