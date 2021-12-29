@@ -78,7 +78,7 @@ p {
     margin: 1rem 0;
 }
 
-article ul, .lone-param p {
+article ul, .lone-param {
     padding-left: 1rem;
 }
 
@@ -86,7 +86,7 @@ article ul:not(.see-links) {
     list-style: none;
 }
 
-article ul li::before, .lone-param p::before {
+article ul li::before, .lone-param::before {
     content: '\2014\a0';
     margin-right: 0.5rem;
 }
