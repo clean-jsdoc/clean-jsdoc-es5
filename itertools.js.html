@@ -29,12 +29,33 @@
     <link type="text/css" rel="stylesheet" media="screen" href="styles/clean-jsdoc-theme-light.css">
 
     
+    <script>
+      if (window.matchMedia) {
+        var styles = Array.prototype.slice.call(document.querySelectorAll('link[rel="stylesheet"]'))
+        var theme = styles.find(function(s) { return /(theme).*(light|dark).*\.css$/i.test(s.href) })
+        if (theme) {
+          theme.href =
+            matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'styles/clean-jsdoc-theme-dark.css'
+            : 'styles/clean-jsdoc-theme-light.css'
+
+          document.addEventListener("DOMContentLoaded", function () {
+            var themeId = document.getElementById('clean-jsdoc-theme')
+            if (themeId)
+              themeId.innerText = theme.href.split(/\W/).includes('dark') ? 'dark' : 'light'
+          })
+        }
+      }
+    </script>
+    
+
+    
     <link type="text/css" rel="stylesheet" media="screen" href="styles/third-party/OverlayScrollbars.min.css">
     
 
     
       
-        <link href="https://raw.githubusercontent.com/rdipardo/clean-jsdoc-theme/c66f2cb8e2592b7a0185bf2e6160bcdd698063dd/img/html-5.png" type="image/x-icon" rel="shortcut icon">
+        <link href="https://raw.githubusercontent.com/rdipardo/clean-jsdoc-theme/c66f2cb8e2592b7a0185bf2e6160bcdd698063dd/img/html-5.png" type="image/x-icon" rel="icon">
       
     
 
@@ -109,13 +130,13 @@
 <nav id="navbar" class="navbar">
     
     <div class="gh-meta">
-    <p><b>Version</b> 4.1.1</p>
+    <p><b>Version</b> 4.2.0</p>
     <p>
       <a href="https://github.com/rdipardo/clean-jsdoc-theme" title="View project on GitHub"><span class="fa fa-github" aria-hidden="true"></span></a>
     </p>
     </div>
     
-    <div class="navbar-heading" id="navbar-heading"><a href="index.html"><h2 class="navbar-heading-text">README</h2></a></div><div class="search-box" id="search-box"><div class="search-box-input-container"><input class="search-box-input" type="text" placeholder="Search..." id="search-box-input" /><svg class="search-icon" aria-labelledby="search-icon"><use xlink:href="#search-icon"></use></svg></div><div class="search-item-container" id="search-item-container"><ul class="search-item-ul" id="search-item-ul"></ul></div></div><div class="sidebar-main-content" id="sidebar-main-content"><div class="accordion collapsed" id="7390503" > <h3 class="accordion-heading">Classes<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion collapsed child" id=2772970><div class="accordion-heading child"><a href="Alive.html">Alive</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="Alive.html#survive">survive</a></li></ul></li><li class="accordion collapsed child" id=118900><div class="accordion-heading child"><a href="Apple.html">Apple</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="Apple.html#survive">survive</a></li></ul></li><li class="accordion-list" id=2775297><a href="Energy.html">Energy</a></li><li class="accordion collapsed child" id=1814364><div class="accordion-heading child"><a href="Environment.html">Environment</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="Environment.html#start">start</a></li></ul></li><li class="accordion collapsed child" id=2762259><div class="accordion-heading child"><a href="Tree.html">Tree</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="Tree.html#crop">crop</a></li><li data-type='method'><a href="Tree.html#survive">survive</a></li></ul></li><li class="accordion-list" id=3700778><a href="WeatherReading.html">WeatherReading</a></li></ul> </div><div class="accordion collapsed" id="6200413" > <h3 class="accordion-heading">Modules<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion collapsed child" id=7563479><div class="accordion-heading child"><a href="module-itertools.html">itertools</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="module-itertools.html#~frequencyOf">frequencyOf</a></li><li data-type='method'><a href="module-itertools.html#~sortBy">sortBy</a></li></ul></li></ul> </div><div class="accordion collapsed" id="615384" > <h3 class="accordion-heading">Events<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion-list" id=4232846><a href="Apple.html#event:beEaten">beEaten</a></li><li class="accordion-list" id=5264620><a href="Environment.html#event:beforeDestroy">beforeDestroy</a></li></ul> </div><div class="accordion collapsed" id="3851308" > <h3 class="accordion-heading">Global<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion-list" id=6621407><a href="global.html#EnergyUnit">EnergyUnit</a></li><li class="accordion-list" id=9617249><a href="global.html#EnvironmentConfiguration">EnvironmentConfiguration</a></li><li class="accordion-list" id=46912><a href="global.html#fetchWeatherIcon">fetchWeatherIcon</a></li></ul> </div></div>
+    <div class="navbar-heading" id="navbar-heading"><a href="index.html"><h2 class="navbar-heading-text">README</h2></a></div><div class="search-box" id="search-box"><div class="search-box-input-container"><input class="search-box-input" type="text" placeholder="Search..." id="search-box-input" /><svg class="search-icon" aria-labelledby="search-icon"><use xlink:href="#search-icon"></use></svg></div><div class="search-item-container" id="search-item-container"><ul class="search-item-ul" id="search-item-ul"></ul></div></div><div class="sidebar-main-content" id="sidebar-main-content"><div class="accordion collapsed" id="2714505" > <h3 class="accordion-heading">Modules<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion collapsed child" id="7906305"><div class="accordion-heading child"><a href="module-itertools.html">itertools</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class="methods accordion-content"><li data-type="method"><a href="module-itertools.html#~frequencyOf">frequencyOf</a></li><li data-type="method"><a href="module-itertools.html#~sortBy">sortBy</a></li></ul></li></ul> </div><div class="accordion collapsed" id="5445963" > <h3 class="accordion-heading">Classes<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion collapsed child" id="6715080"><div class="accordion-heading child"><a href="Alive.html">Alive</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class="methods accordion-content"><li data-type="method"><a href="Alive.html#survive">survive</a></li></ul></li><li class="accordion collapsed child" id="589055"><div class="accordion-heading child"><a href="Apple.html">Apple</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class="methods accordion-content"><li data-type="method"><a href="Apple.html#survive">survive</a></li></ul></li><li class="accordion-list" id="2899726"><a href="Energy.html">Energy</a></li><li class="accordion collapsed child" id="2830497"><div class="accordion-heading child"><a href="Environment.html">Environment</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class="methods accordion-content"><li data-type="method"><a href="Environment.html#start">start</a></li></ul></li><li class="accordion collapsed child" id="3075315"><div class="accordion-heading child"><a href="Tree.html">Tree</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class="methods accordion-content"><li data-type="method"><a href="Tree.html#crop">crop</a></li><li data-type="method"><a href="Tree.html#survive">survive</a></li></ul></li><li class="accordion-list" id="2772071"><a href="WeatherReading.html">WeatherReading</a></li></ul> </div><div class="accordion collapsed" id="8146763" > <h3 class="accordion-heading">Events<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion-list" id="6548624"><a href="Apple.html#event:beEaten">beEaten</a></li><li class="accordion-list" id="1441760"><a href="Environment.html#event:beforeDestroy">beforeDestroy</a></li></ul> </div><div class="accordion collapsed" id="9776203" > <h3 class="accordion-heading">Global<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion-list" id="2529162"><a href="global.html#EnergyUnit">EnergyUnit</a></li><li class="accordion-list" id="7671343"><a href="global.html#EnvironmentConfiguration">EnvironmentConfiguration</a></li><li class="accordion-list" id="4538657"><a href="global.html#fetchWeatherIcon">fetchWeatherIcon</a></li></ul> </div><div class="accordion collapsed" id="2051374" > <h3 class="accordion-heading">Tutorials<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion-list" id="6138614"><a href="tutorial-Alive_.html">Alive</a></li><li class="accordion-list" id="4585387"><a href="tutorial-Apple_.html">Apple</a></li><li class="accordion-list" id="6631074"><a href="tutorial-Environment_.html">Environment</a></li><li class="accordion-list" id="2698153"><a href="tutorial-Other.html">Other</a></li></ul> </div><ul><li class="menu-li"><a href="https://heredocs.io" class=" menu-link" target="_blank">Blog</a></li><li class="menu-li"><a href="https://bitbucket.org/rdipardo" class=" menu-link" target="_blank">Other Projects</a></li></ul></div>
 </nav>
 
 <div class="navbar-ham" id="navbar-ham">
@@ -147,35 +168,35 @@
 
 /**
  * Sorts the given `list` of objects according to the given `key`
- * @param {Array&lt;Object>} list - An object collection
+ * @param {Array&amp;lt;Object&gt;} list - An object collection
  * @param {string} key - The property to sort by
  * @param {boolean} [desc=false] - Option to sort in reverse order
- * @returns {Array&lt;Object>} A sorted copy of `list`
+ * @returns {Array&amp;lt;Object&gt;} A sorted copy of `list`
  */
-const sortBy = (list, key, desc = false) => {
+const sortBy = (list, key, desc = false) =&gt; {
     const sorted = list
-        .map((obj, idx) => {
+        .map((obj, idx) =&gt; {
             return { [key]: obj[`${key}`], idx }
         })
-        .sort((a, b) => {
+        .sort((a, b) =&gt; {
             let first = a[`${key}`]
             let second = b[`${key}`]
 
             if (typeof a[`${key}`] === 'string'
-                &amp;&amp; typeof b[`${key}`] === 'string') {
+                &amp;amp;&amp;amp; typeof b[`${key}`] === 'string') {
                 first = a[`${key}`].toLowerCase()
                 second = b[`${key}`].toLowerCase()
             }
-            if (first &lt; second) {
+            if (first &amp;lt; second) {
                 return -1
             }
-            if (first > second) {
+            if (first &gt; second) {
                 return 1
             }
 
             return 0
         })
-        .map(s => list[s.idx])
+        .map(s =&gt; list[s.idx])
 
     return desc ? sorted.reverse() : sorted
 }
@@ -184,18 +205,18 @@ const sortBy = (list, key, desc = false) => {
 * Collects all the values at the given `key` and totals them by applying the
 *  given aggregate function (`xform`); returns an ordered summary of totals
 *  for each `group`
-* @param {Array&lt;Object.&lt;string, number>>} list - An object collection
+* @param {Array&amp;lt;Object.&amp;lt;string, number&gt;&gt;} list - An object collection
 * @param {string} group - A common property to group the results under
 * @param {string} key - A common property whose (numeric) value will be totalled
-* @param {module:itertools~Aggregate} [xform=(x, _, k) => x[`${k}`] += 1] - An
+* @param {module:itertools~Aggregate} [xform=(x, _, k) =&gt; x[`${k}`] += 1] - An
 *  aggregating function
-* @returns {Array&lt;Object.&lt;string, number>>} A mapping of each item in `list`
+* @returns {Array&amp;lt;Object.&amp;lt;string, number&gt;&gt;} A mapping of each item in `list`
 *   to its respective frequency
 */
-const frequencyOf = (list, group, key, xform = (x, _, k) => x[`${k}`] += 1) => {
-    return sortBy(list, group).reduce((freqs, item) => {
+const frequencyOf = (list, group, key, xform = (x, _, k) =&gt; x[`${k}`] += 1) =&gt; {
+    return sortBy(list, group).reduce((freqs, item) =&gt; {
         const included =
-            freqs.find(it => it[`${group}`] === item[`${group}`])
+            freqs.find(it =&gt; it[`${group}`] === item[`${group}`])
 
         if (included) {
             xform(included, item, `${key}`)
@@ -214,16 +235,16 @@ const frequencyOf = (list, group, key, xform = (x, _, k) => x[`${k}`] += 1) => {
  * Takes two objects and the name of a common property, returning the sum of
  *  their respective values
  * @typedef Aggregate
- * @type {function(Object.&lt;string, number>,
-                   Object.&lt;string, number>,
+ * @type {function(Object.&amp;lt;string, number&gt;,
+                   Object.&amp;lt;string, number&gt;,
                    string): number}
-* @param {Object.&lt;string, number>} - The first object
-* @param {Object.&lt;string, number>} - The second object
+* @param {Object.&amp;lt;string, number&gt;} - The first object
+* @param {Object.&amp;lt;string, number&gt;} - The second object
 * @param {string} - The name of a property common to both
 * @returns {number} The sum of the values of each object's common property
 * @example
-* const fn = (x, y, k) => x[`${k}`] + y[`${k}`]
-* @example &lt;caption>Using an aggregating function&lt;/caption>
+* const fn = (x, y, k) =&gt; x[`${k}`] + y[`${k}`]
+* @example &amp;lt;caption&gt;Using an aggregating function&amp;lt;/caption&gt;
 * const h1 = {'height': 7}
 * const h2 = {'height': 3}
 * const totalHeight = fn(h1, h2, 'height')
@@ -242,7 +263,7 @@ module.exports = { sortBy, frequencyOf }</code></pre>
 
 <footer id="footer" class="footer">
   
-  Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> using the <a href="https://github.com/rdipardo/clean-jsdoc-theme">clean-jsdoc</a> light theme.
+  Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> using the <a href="https://github.com/rdipardo/clean-jsdoc-theme">clean-jsdoc</a> <span id="clean-jsdoc-theme">dynamic</span> theme.
   
 </footer>
 
@@ -258,7 +279,7 @@ module.exports = { sortBy, frequencyOf }</code></pre>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
       if (document.getElementById('search-box')) {
-          var list = [{"title":"Alive","link":"<a href=\"Alive.html\">Alive</a>"},{"title":"Alive#survive","link":"<a href=\"Alive.html#survive\">Alive &rtrif; survive</a>"},{"title":"Apple","link":"<a href=\"Apple.html\">Apple</a>"},{"title":"Apple#survive","link":"<a href=\"Apple.html#survive\">Apple &rtrif; survive</a>"},{"title":"Energy","link":"<a href=\"Energy.html\">Energy</a>"},{"title":"Environment","link":"<a href=\"Environment.html\">Environment</a>"},{"title":"Environment#start","link":"<a href=\"Environment.html#start\">Environment &rtrif; start</a>"},{"title":"Tree","link":"<a href=\"Tree.html\">Tree</a>"},{"title":"Tree#crop","link":"<a href=\"Tree.html#crop\">Tree &rtrif; crop</a>"},{"title":"Tree#survive","link":"<a href=\"Tree.html#survive\">Tree &rtrif; survive</a>"},{"title":"WeatherReading","link":"<a href=\"WeatherReading.html\">WeatherReading</a>"},{"title":"itertools","link":"<a href=\"module-itertools.html\">itertools</a>"},{"title":"module:itertools~frequencyOf","link":"<a href=\"module-itertools.html#~frequencyOf\">frequencyOf</a>"},{"title":"module:itertools~sortBy","link":"<a href=\"module-itertools.html#~sortBy\">sortBy</a>"},{"title":"beEaten","link":"<a href=\"Apple.html#event:beEaten\">beEaten</a>"},{"title":"beforeDestroy","link":"<a href=\"Environment.html#event:beforeDestroy\">beforeDestroy</a>"},{"title":"EnergyUnit","link":"<a href=\"global.html#EnergyUnit\">EnergyUnit</a>"},{"title":"EnvironmentConfiguration","link":"<a href=\"global.html#EnvironmentConfiguration\">EnvironmentConfiguration</a>"},{"title":"fetchWeatherIcon","link":"<a href=\"global.html#fetchWeatherIcon\">fetchWeatherIcon</a>"}];
+          var list = [{"title":"itertools","link":"<a href=\"module-itertools.html\">itertools</a>"},{"title":"module:itertools~frequencyOf","link":"<a href=\"module-itertools.html#~frequencyOf\">frequencyOf</a>"},{"title":"module:itertools~sortBy","link":"<a href=\"module-itertools.html#~sortBy\">sortBy</a>"},{"title":"Alive","link":"<a href=\"Alive.html\">Alive</a>"},{"title":"Alive#survive","link":"<a href=\"Alive.html#survive\">Alive &rtrif; survive</a>"},{"title":"Apple","link":"<a href=\"Apple.html\">Apple</a>"},{"title":"Apple#survive","link":"<a href=\"Apple.html#survive\">Apple &rtrif; survive</a>"},{"title":"Energy","link":"<a href=\"Energy.html\">Energy</a>"},{"title":"Environment","link":"<a href=\"Environment.html\">Environment</a>"},{"title":"Environment#start","link":"<a href=\"Environment.html#start\">Environment &rtrif; start</a>"},{"title":"Tree","link":"<a href=\"Tree.html\">Tree</a>"},{"title":"Tree#crop","link":"<a href=\"Tree.html#crop\">Tree &rtrif; crop</a>"},{"title":"Tree#survive","link":"<a href=\"Tree.html#survive\">Tree &rtrif; survive</a>"},{"title":"WeatherReading","link":"<a href=\"WeatherReading.html\">WeatherReading</a>"},{"title":"beEaten","link":"<a href=\"Apple.html#event:beEaten\">beEaten</a>"},{"title":"beforeDestroy","link":"<a href=\"Environment.html#event:beforeDestroy\">beforeDestroy</a>"},{"title":"Alive","link":"<a href=\"Alive.html\">Alive</a>"},{"title":"Apple","link":"<a href=\"Apple.html\">Apple</a>"},{"title":"Environment","link":"<a href=\"Environment.html\">Environment</a>"},{"title":"Other","link":"Other"},{"title":"EnergyUnit","link":"<a href=\"global.html#EnergyUnit\">EnergyUnit</a>"},{"title":"EnvironmentConfiguration","link":"<a href=\"global.html#EnvironmentConfiguration\">EnvironmentConfiguration</a>"},{"title":"fetchWeatherIcon","link":"<a href=\"global.html#fetchWeatherIcon\">fetchWeatherIcon</a>"}];
           setupSearch(list)
       }
 })

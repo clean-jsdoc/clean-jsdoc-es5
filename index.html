@@ -29,12 +29,33 @@
     <link type="text/css" rel="stylesheet" media="screen" href="styles/clean-jsdoc-theme-light.css">
 
     
+    <script>
+      if (window.matchMedia) {
+        var styles = Array.prototype.slice.call(document.querySelectorAll('link[rel="stylesheet"]'))
+        var theme = styles.find(function(s) { return /(theme).*(light|dark).*\.css$/i.test(s.href) })
+        if (theme) {
+          theme.href =
+            matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'styles/clean-jsdoc-theme-dark.css'
+            : 'styles/clean-jsdoc-theme-light.css'
+
+          document.addEventListener("DOMContentLoaded", function () {
+            var themeId = document.getElementById('clean-jsdoc-theme')
+            if (themeId)
+              themeId.innerText = theme.href.split(/\W/).includes('dark') ? 'dark' : 'light'
+          })
+        }
+      }
+    </script>
+    
+
+    
     <link type="text/css" rel="stylesheet" media="screen" href="styles/third-party/OverlayScrollbars.min.css">
     
 
     
       
-        <link href="https://raw.githubusercontent.com/rdipardo/clean-jsdoc-theme/c66f2cb8e2592b7a0185bf2e6160bcdd698063dd/img/html-5.png" type="image/x-icon" rel="shortcut icon">
+        <link href="https://raw.githubusercontent.com/rdipardo/clean-jsdoc-theme/c66f2cb8e2592b7a0185bf2e6160bcdd698063dd/img/html-5.png" type="image/x-icon" rel="icon">
       
     
 
@@ -109,13 +130,13 @@
 <nav id="navbar" class="navbar">
     
     <div class="gh-meta">
-    <p><b>Version</b> 4.1.1</p>
+    <p><b>Version</b> 4.2.0</p>
     <p>
       <a href="https://github.com/rdipardo/clean-jsdoc-theme" title="View project on GitHub"><span class="fa fa-github" aria-hidden="true"></span></a>
     </p>
     </div>
     
-    <div class="navbar-heading" id="navbar-heading"><a href="index.html"><h2 class="navbar-heading-text">README</h2></a></div><div class="search-box" id="search-box"><div class="search-box-input-container"><input class="search-box-input" type="text" placeholder="Search..." id="search-box-input" /><svg class="search-icon" aria-labelledby="search-icon"><use xlink:href="#search-icon"></use></svg></div><div class="search-item-container" id="search-item-container"><ul class="search-item-ul" id="search-item-ul"></ul></div></div><div class="sidebar-main-content" id="sidebar-main-content"><div class="accordion collapsed" id="7390503" > <h3 class="accordion-heading">Classes<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion collapsed child" id=2772970><div class="accordion-heading child"><a href="Alive.html">Alive</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="Alive.html#survive">survive</a></li></ul></li><li class="accordion collapsed child" id=118900><div class="accordion-heading child"><a href="Apple.html">Apple</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="Apple.html#survive">survive</a></li></ul></li><li class="accordion-list" id=2775297><a href="Energy.html">Energy</a></li><li class="accordion collapsed child" id=1814364><div class="accordion-heading child"><a href="Environment.html">Environment</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="Environment.html#start">start</a></li></ul></li><li class="accordion collapsed child" id=2762259><div class="accordion-heading child"><a href="Tree.html">Tree</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="Tree.html#crop">crop</a></li><li data-type='method'><a href="Tree.html#survive">survive</a></li></ul></li><li class="accordion-list" id=3700778><a href="WeatherReading.html">WeatherReading</a></li></ul> </div><div class="accordion collapsed" id="6200413" > <h3 class="accordion-heading">Modules<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion collapsed child" id=7563479><div class="accordion-heading child"><a href="module-itertools.html">itertools</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="module-itertools.html#~frequencyOf">frequencyOf</a></li><li data-type='method'><a href="module-itertools.html#~sortBy">sortBy</a></li></ul></li></ul> </div><div class="accordion collapsed" id="615384" > <h3 class="accordion-heading">Events<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion-list" id=4232846><a href="Apple.html#event:beEaten">beEaten</a></li><li class="accordion-list" id=5264620><a href="Environment.html#event:beforeDestroy">beforeDestroy</a></li></ul> </div><div class="accordion collapsed" id="3851308" > <h3 class="accordion-heading">Global<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion-list" id=6621407><a href="global.html#EnergyUnit">EnergyUnit</a></li><li class="accordion-list" id=9617249><a href="global.html#EnvironmentConfiguration">EnvironmentConfiguration</a></li><li class="accordion-list" id=46912><a href="global.html#fetchWeatherIcon">fetchWeatherIcon</a></li></ul> </div></div>
+    <div class="navbar-heading" id="navbar-heading"><a href="index.html"><h2 class="navbar-heading-text">README</h2></a></div><div class="search-box" id="search-box"><div class="search-box-input-container"><input class="search-box-input" type="text" placeholder="Search..." id="search-box-input" /><svg class="search-icon" aria-labelledby="search-icon"><use xlink:href="#search-icon"></use></svg></div><div class="search-item-container" id="search-item-container"><ul class="search-item-ul" id="search-item-ul"></ul></div></div><div class="sidebar-main-content" id="sidebar-main-content"><div class="accordion collapsed" id="2714505" > <h3 class="accordion-heading">Modules<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion collapsed child" id="7906305"><div class="accordion-heading child"><a href="module-itertools.html">itertools</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class="methods accordion-content"><li data-type="method"><a href="module-itertools.html#~frequencyOf">frequencyOf</a></li><li data-type="method"><a href="module-itertools.html#~sortBy">sortBy</a></li></ul></li></ul> </div><div class="accordion collapsed" id="5445963" > <h3 class="accordion-heading">Classes<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion collapsed child" id="6715080"><div class="accordion-heading child"><a href="Alive.html">Alive</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class="methods accordion-content"><li data-type="method"><a href="Alive.html#survive">survive</a></li></ul></li><li class="accordion collapsed child" id="589055"><div class="accordion-heading child"><a href="Apple.html">Apple</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class="methods accordion-content"><li data-type="method"><a href="Apple.html#survive">survive</a></li></ul></li><li class="accordion-list" id="2899726"><a href="Energy.html">Energy</a></li><li class="accordion collapsed child" id="2830497"><div class="accordion-heading child"><a href="Environment.html">Environment</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class="methods accordion-content"><li data-type="method"><a href="Environment.html#start">start</a></li></ul></li><li class="accordion collapsed child" id="3075315"><div class="accordion-heading child"><a href="Tree.html">Tree</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class="methods accordion-content"><li data-type="method"><a href="Tree.html#crop">crop</a></li><li data-type="method"><a href="Tree.html#survive">survive</a></li></ul></li><li class="accordion-list" id="2772071"><a href="WeatherReading.html">WeatherReading</a></li></ul> </div><div class="accordion collapsed" id="8146763" > <h3 class="accordion-heading">Events<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion-list" id="6548624"><a href="Apple.html#event:beEaten">beEaten</a></li><li class="accordion-list" id="1441760"><a href="Environment.html#event:beforeDestroy">beforeDestroy</a></li></ul> </div><div class="accordion collapsed" id="9776203" > <h3 class="accordion-heading">Global<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion-list" id="2529162"><a href="global.html#EnergyUnit">EnergyUnit</a></li><li class="accordion-list" id="7671343"><a href="global.html#EnvironmentConfiguration">EnvironmentConfiguration</a></li><li class="accordion-list" id="4538657"><a href="global.html#fetchWeatherIcon">fetchWeatherIcon</a></li></ul> </div><div class="accordion collapsed" id="2051374" > <h3 class="accordion-heading">Tutorials<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion-list" id="6138614"><a href="tutorial-Alive_.html">Alive</a></li><li class="accordion-list" id="4585387"><a href="tutorial-Apple_.html">Apple</a></li><li class="accordion-list" id="6631074"><a href="tutorial-Environment_.html">Environment</a></li><li class="accordion-list" id="2698153"><a href="tutorial-Other.html">Other</a></li></ul> </div><ul><li class="menu-li"><a href="https://heredocs.io" class=" menu-link" target="_blank">Blog</a></li><li class="menu-li"><a href="https://bitbucket.org/rdipardo" class=" menu-link" target="_blank">Other Projects</a></li></ul></div>
 </nav>
 
 <div class="navbar-ham" id="navbar-ham">
@@ -172,6 +193,7 @@
 <li><a href="#advanced">Advanced Options</a>
 <ul>
 <li><a href="#project_option">project</a></li>
+<li><a href="#sections_option">sections</a></li>
 <li><a href="#menu_option">menu</a></li>
 <li><a href="#meta_option">meta</a></li>
 <li><a href="#remote_assets_option">remote_assets</a></li>
@@ -188,8 +210,8 @@
 <li><a href="#license">License</a></li>
 </ul>
 <h2 id="installation">Installation</h2>
-<p><i class="fa fa-warning" style="color:#f90;font-size:2em" aria-hidden="true">:warning:</i></p>
-<p>Installing from the <a href="https://docs.github.com/en/packages/guides/configuring-npm-for-use-with-github-packages#authenticating-with-a-personal-access-token">GitHub Package Registry</a> (<a href="https://github.community/t/download-from-github-package-registry-without-authentication/14407/2">currently</a>) requires a
+<p><i class="fa fa-warning" style="color:#f90;font-size:2em" aria-hidden="true">:warning:</i>
+Installing from the <a href="https://docs.github.com/en/packages/guides/configuring-npm-for-use-with-github-packages#authenticating-with-a-personal-access-token">GitHub Package Registry</a> (<a href="https://github.community/t/download-from-github-package-registry-without-authentication/14407/2">currently</a>) requires a
 <a href="https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token">personal access token</a> (PAT) with the <code>read:packages</code> scope.</p>
 <p>Be sure to <a href="https://docs.github.com/en/packages/guides/configuring-npm-for-use-with-github-packages#installing-a-package">authenticate with the registry</a> via <code>npm login</code>, or by adding this
 line to a <code>.npmrc</code> file in your <code>$HOME</code> directory:</p>
@@ -273,7 +295,7 @@ line to a <code>.npmrc</code> file in your <code>$HOME</code> directory:</p>
 <td style="text-align:left">the overall style theme</td>
 <td style="text-align:center">string</td>
 <td style="text-align:center"><code>&quot;light&quot;</code></td>
-<td style="text-align:center"><code>&quot;light&quot;</code>, <code>&quot;dark&quot;</code></td>
+<td style="text-align:center"><code>&quot;light&quot;</code>, <code>&quot;dark&quot;</code>, <code>&quot;dynamic&quot;</code> [1]</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>search</code></td>
@@ -284,7 +306,7 @@ line to a <code>.npmrc</code> file in your <code>$HOME</code> directory:</p>
 </tr>
 <tr>
 <td style="text-align:center"><code>menuLocation</code></td>
-<td style="text-align:left">sets the location of the optional <a href="#menu_option">external links menu</a> relative to the doc navigation menu [1]</td>
+<td style="text-align:left">sets the location of the optional <a href="#menu_option">external links menu</a> relative to the doc navigation menu [2]</td>
 <td style="text-align:center">string</td>
 <td style="text-align:center"><code>&quot;up&quot;</code></td>
 <td style="text-align:center"><code>&quot;up&quot;</code>, <code>&quot;down&quot;</code></td>
@@ -322,13 +344,14 @@ line to a <code>.npmrc</code> file in your <code>$HOME</code> directory:</p>
 <td style="text-align:left">a list of folders to search for scripts and CSS files</td>
 <td style="text-align:center">[&quot;path/to/assets&quot;, ...]</td>
 <td style="text-align:center"><code>[]</code></td>
-<td style="text-align:center">&gt;=1 path, relative to your <code>.jsdoc.json</code> [2]</td>
+<td style="text-align:center">&gt;=1 path, relative to your <code>.jsdoc.json</code> [3]</td>
 </tr>
 </tbody>
 </table>
 <hr/>
-&#91;1&#93; "up" == above navigation menu, "down" == below. Requires the <a href="#menu_option">menu option</a> to be set
-<p>[2] non-existent paths, or paths outside the working directory, will be ignored with a warning message</p>
+<p>[1] sets the theme according to the value of the <code>prefers-color-scheme</code> <code>@media</code> query; it falls back to <code>&quot;light&quot;</code></p>
+<p>[2] &quot;up&quot; == above navigation menu, &quot;down&quot; == below. Requires the <a href="#menu_option">menu option</a> to be set</p>
+<p>[3] non-existent paths, or paths outside the working directory, will be ignored with a warning message</p>
 <h3 id="advanced">Advanced</h3>
 <h4 id="%22project%22%3A-%7B%7D"><code>&quot;project&quot;: {}</code> <a id="project_option"></a></h4>
 <p>Details of your project, e.g.</p>
@@ -378,6 +401,30 @@ line to a <code>.npmrc</code> file in your <code>$HOME</code> directory:</p>
 </tr>
 </tbody>
 </table>
+<h4 id="%22sections%22%3A-%5B...%5D"><code>&quot;sections&quot;: [...]</code> <a id="sections_option"></a></h4>
+<p>Documentation headings to include in the navigation menu, e.g.</p>
+<pre class="prettyprint source lang-json"><code>  &quot;sections&quot;: [
+      &quot;namespaces&quot;,
+      &quot;interfaces&quot;,
+      &quot;classes&quot;,
+      &quot;events&quot;,
+      &quot;tutorials&quot;
+  ]
+</code></pre>
+<h5 id="required-properties-2">Required properties</h5>
+<p>At least one of the following section labels (case insensitive):</p>
+<pre class="prettyprint source lang-json"><code>    &quot;classes&quot;
+    &quot;externals&quot;
+    &quot;events&quot;
+    &quot;global&quot;
+    &quot;interfaces&quot;
+    &quot;mixins&quot;
+    &quot;modules&quot;
+    &quot;namespaces&quot;
+    &quot;tutorials&quot;
+</code></pre>
+<p>Unlisted labels will be ignored with a warning message.
+Leave this option undefined to include <em>all</em> sections detected by <code>jsdoc</code>.</p>
 <h4 id="%22menu%22%3A-%5B%7B%7D%2C-...%5D"><code>&quot;menu&quot;: [{}, ...]</code> <a id="menu_option"></a></h4>
 <p>A list of hyperlinks to add to the navigation bar, e.g.</p>
 <pre class="prettyprint source lang-json"><code>  &quot;menu&quot;: [
@@ -390,7 +437,7 @@ line to a <code>.npmrc</code> file in your <code>$HOME</code> directory:</p>
     }
   ]
 </code></pre>
-<h5 id="required-properties-2">Required properties</h5>
+<h5 id="required-properties-3">Required properties</h5>
 <table>
 <thead>
 <tr>
@@ -445,7 +492,7 @@ line to a <code>.npmrc</code> file in your <code>$HOME</code> directory:</p>
       }
     ]
 </code></pre>
-<h5 id="required-properties-3">Required properties</h5>
+<h5 id="required-properties-4">Required properties</h5>
 <p>Any valid combinaton of <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#Attributes">HTML metadata attributes</a>.</p>
 <h4 id="%22remote_assets%22%3A-%5B%7B%7D%2C-...%5D"><code>&quot;remote_assets&quot;: [{}, ...]</code>  <a id="remote_assets_option"></a></h4>
 <p>A list of <code>link</code> tag attributes for asset resources, e.g.</p>
@@ -462,7 +509,7 @@ line to a <code>.npmrc</code> file in your <code>$HOME</code> directory:</p>
     }
   ]
 </code></pre>
-<h5 id="required-properties-4">Required properties</h5>
+<h5 id="required-properties-5">Required properties</h5>
 <table>
 <thead>
 <tr>
@@ -514,7 +561,7 @@ may be added in future releases.</p>
     }
   ]
 </code></pre>
-<h5 id="required-properties-5">Required properties</h5>
+<h5 id="required-properties-6">Required properties</h5>
 <table>
 <thead>
 <tr>
@@ -533,7 +580,7 @@ may be added in future releases.</p>
 <p>Mostly the same as <a href="#optional_asset_attrs"><code>remote_assets</code></a></p>
 <h4 id="%22overlay_scrollbar%22%3A-%7B-%22options%22%3A-%7B%7D-%7D"><code>&quot;overlay_scrollbar&quot;: { &quot;options&quot;: {} }</code> <a id="overlay_scrollbar_option"></a></h4>
 <p>Includes the <a href="https://kingsora.github.io/OverlayScrollbars/#!documentation/options">OverlayScrollbars</a> plugin.</p>
-<h5 id="required-properties-6">Required properties</h5>
+<h5 id="required-properties-7">Required properties</h5>
 <p>None. Simply passing an empty object will activate this feature.</p>
 <h5 id="optional-properties-5">Optional properties</h5>
 <p>Any option supported by <a href="https://kingsora.github.io/OverlayScrollbars/#!documentation/options">OverlayScrollbars</a>.</p>
@@ -546,7 +593,7 @@ may be added in future releases.</p>
   }
 }
 </code></pre>
-<h5 id="required-properties-7">Required properties</h5>
+<h5 id="required-properties-8">Required properties</h5>
 <p>None. Simply passing an empty object will activate this feature.</p>
 <h5 id="optional-properties-6">Optional properties</h5>
 <p>Any valid <a href="https://blog.codepen.io/documentation/prefill/#all-the-json-options-0">CodePen prefill option</a>.</p>
@@ -581,7 +628,7 @@ Copyright (c) 2020 <a href="https://github.com/rdipardo/">Robert Di Pardo</a></p
 
 <footer id="footer" class="footer">
   
-  Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> using the <a href="https://github.com/rdipardo/clean-jsdoc-theme">clean-jsdoc</a> light theme.
+  Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> using the <a href="https://github.com/rdipardo/clean-jsdoc-theme">clean-jsdoc</a> <span id="clean-jsdoc-theme">dynamic</span> theme.
   
 </footer>
 
@@ -597,7 +644,7 @@ Copyright (c) 2020 <a href="https://github.com/rdipardo/">Robert Di Pardo</a></p
 <script>
   document.addEventListener("DOMContentLoaded", function () {
       if (document.getElementById('search-box')) {
-          var list = [{"title":"Alive","link":"<a href=\"Alive.html\">Alive</a>"},{"title":"Alive#survive","link":"<a href=\"Alive.html#survive\">Alive &rtrif; survive</a>"},{"title":"Apple","link":"<a href=\"Apple.html\">Apple</a>"},{"title":"Apple#survive","link":"<a href=\"Apple.html#survive\">Apple &rtrif; survive</a>"},{"title":"Energy","link":"<a href=\"Energy.html\">Energy</a>"},{"title":"Environment","link":"<a href=\"Environment.html\">Environment</a>"},{"title":"Environment#start","link":"<a href=\"Environment.html#start\">Environment &rtrif; start</a>"},{"title":"Tree","link":"<a href=\"Tree.html\">Tree</a>"},{"title":"Tree#crop","link":"<a href=\"Tree.html#crop\">Tree &rtrif; crop</a>"},{"title":"Tree#survive","link":"<a href=\"Tree.html#survive\">Tree &rtrif; survive</a>"},{"title":"WeatherReading","link":"<a href=\"WeatherReading.html\">WeatherReading</a>"},{"title":"itertools","link":"<a href=\"module-itertools.html\">itertools</a>"},{"title":"module:itertools~frequencyOf","link":"<a href=\"module-itertools.html#~frequencyOf\">frequencyOf</a>"},{"title":"module:itertools~sortBy","link":"<a href=\"module-itertools.html#~sortBy\">sortBy</a>"},{"title":"beEaten","link":"<a href=\"Apple.html#event:beEaten\">beEaten</a>"},{"title":"beforeDestroy","link":"<a href=\"Environment.html#event:beforeDestroy\">beforeDestroy</a>"},{"title":"EnergyUnit","link":"<a href=\"global.html#EnergyUnit\">EnergyUnit</a>"},{"title":"EnvironmentConfiguration","link":"<a href=\"global.html#EnvironmentConfiguration\">EnvironmentConfiguration</a>"},{"title":"fetchWeatherIcon","link":"<a href=\"global.html#fetchWeatherIcon\">fetchWeatherIcon</a>"}];
+          var list = [{"title":"itertools","link":"<a href=\"module-itertools.html\">itertools</a>"},{"title":"module:itertools~frequencyOf","link":"<a href=\"module-itertools.html#~frequencyOf\">frequencyOf</a>"},{"title":"module:itertools~sortBy","link":"<a href=\"module-itertools.html#~sortBy\">sortBy</a>"},{"title":"Alive","link":"<a href=\"Alive.html\">Alive</a>"},{"title":"Alive#survive","link":"<a href=\"Alive.html#survive\">Alive &rtrif; survive</a>"},{"title":"Apple","link":"<a href=\"Apple.html\">Apple</a>"},{"title":"Apple#survive","link":"<a href=\"Apple.html#survive\">Apple &rtrif; survive</a>"},{"title":"Energy","link":"<a href=\"Energy.html\">Energy</a>"},{"title":"Environment","link":"<a href=\"Environment.html\">Environment</a>"},{"title":"Environment#start","link":"<a href=\"Environment.html#start\">Environment &rtrif; start</a>"},{"title":"Tree","link":"<a href=\"Tree.html\">Tree</a>"},{"title":"Tree#crop","link":"<a href=\"Tree.html#crop\">Tree &rtrif; crop</a>"},{"title":"Tree#survive","link":"<a href=\"Tree.html#survive\">Tree &rtrif; survive</a>"},{"title":"WeatherReading","link":"<a href=\"WeatherReading.html\">WeatherReading</a>"},{"title":"beEaten","link":"<a href=\"Apple.html#event:beEaten\">beEaten</a>"},{"title":"beforeDestroy","link":"<a href=\"Environment.html#event:beforeDestroy\">beforeDestroy</a>"},{"title":"Alive","link":"<a href=\"Alive.html\">Alive</a>"},{"title":"Apple","link":"<a href=\"Apple.html\">Apple</a>"},{"title":"Environment","link":"<a href=\"Environment.html\">Environment</a>"},{"title":"Other","link":"Other"},{"title":"EnergyUnit","link":"<a href=\"global.html#EnergyUnit\">EnergyUnit</a>"},{"title":"EnvironmentConfiguration","link":"<a href=\"global.html#EnvironmentConfiguration\">EnvironmentConfiguration</a>"},{"title":"fetchWeatherIcon","link":"<a href=\"global.html#fetchWeatherIcon\">fetchWeatherIcon</a>"}];
           setupSearch(list)
       }
 })
