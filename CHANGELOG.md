@@ -1,3 +1,14 @@
+## 4.2.0
+
+### Added
+- new option to list only selected [doc sections][] in the nav menu (ported from upstream)
+- new dynamic theme option: rdipardo/clean-jsdoc-theme@453a2a3
+
+### Fixed
+- several causes of improper HTML: rdipardo/clean-jsdoc-theme@6c34f1c, rdipardo/clean-jsdoc-theme@26f6b23
+
+[doc sections]: https://heredocs.io/clean-jsdoc-theme/#sections_option
+
 ## 4.1.1
 
 ### Fixed

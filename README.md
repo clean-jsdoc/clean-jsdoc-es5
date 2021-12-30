@@ -28,6 +28,7 @@
   + [Basic Options](#basic)
   + [Advanced Options](#advanced)
     * [project](#project_option)
+    * [sections](#sections_option)
     * [menu](#menu_option)
     * [meta](#meta_option)
     * [remote_assets](#remote_assets_option)
@@ -39,7 +40,6 @@
 
 ## Installation
 <i class="fa fa-warning" style="color:#f90;font-size:2em" aria-hidden="true">:warning:</i>
-
 Installing from the [GitHub Package Registry][] ([currently][]) requires a
 [personal access token][] (PAT) with the `read:packages` scope.
 
@@ -147,19 +147,22 @@ _All options must be defined under `opts.theme_opts` in your `.jsdoc.json`_
 
 | name           | purpose                                             | type         | default                            | options                                       |
 |:--------------:|:----------------------------------------------------|:------------:|:----------------------------------:|:---------------------------------------------:|
-| `theme`        | the overall style theme                             | string       | `"light"`                          | `"light"`, `"dark"`                           |
+| `theme`        | the overall style theme                             | string       | `"light"`                          | `"light"`, `"dark"`, `"dynamic"` &#91;1&#93;  |
 | `search`       | enable fuzzy search using [Fuse.js][]               | bool         | `true`                             | `true`, `false`                               |
-| `menuLocation` | sets the location of the optional [external links menu](#menu_option) relative to the doc navigation menu &#91;1&#93; | string | `"up"` | `"up"`, `"down"` |
+| `menuLocation` | sets the location of the optional [external links menu](#menu_option) relative to the doc navigation menu &#91;2&#93; | string | `"up"` | `"up"`, `"down"` |
 | `langNames`    | display language names in code blocks               | bool         | `true`                             | `true`, `false`                               |
 | `title`        | the name of the home link to display on the nav bar | HTML string  | `"README"`                         | any valid HTML markup, or just a plain string |
 | `footer`       | a footer to display in the page layout              | HTML string  | JSDoc version, date and theme info | any valid HTML markup                         |
 | `inline_style` | inline CSS for the `head` of the page layout        | CSS string   | `null`                             | any valid CSS markup                          |
-| `asset_paths`  | a list of folders to search for scripts and CSS files  | &#91;"path/to/assets", ...&#93;   | `[]`       | >=1 path, relative to your `.jsdoc.json` &#91;2&#93; |
+| `asset_paths`  | a list of folders to search for scripts and CSS files  | &#91;"path/to/assets", ...&#93;   | `[]`       | >=1 path, relative to your `.jsdoc.json` &#91;3&#93; |
 
 <hr/>
-&#91;1&#93; "up" == above navigation menu, "down" == below. Requires the <a href="#menu_option">menu option</a> to be set
 
-&#91;2&#93; non-existent paths, or paths outside the working directory, will be ignored with a warning message
+&#91;1&#93; sets the theme according to the value of the `prefers-color-scheme` `@media` query; it falls back to `"light"`
+
+&#91;2&#93; "up" == above navigation menu, "down" == below. Requires the <a href="#menu_option">menu option</a> to be set
+
+&#91;3&#93; non-existent paths, or paths outside the working directory, will be ignored with a warning message
 
 ### Advanced
 
@@ -185,6 +188,40 @@ Details of your project, e.g.
 |:---------:|:--------------------------------------------------------------------:|:------:|:-------:|
 | `title`   | the title of the project; it will appear in every page's `title` tag | string | `null`  |
 | `version` | the semantic version number                                          | string | "1.0.0" |
+
+
+#### `"sections": [...]` <a id="sections_option"></a>
+
+Documentation headings to include in the navigation menu, e.g.
+
+```json
+  "sections": [
+      "namespaces",
+      "interfaces",
+      "classes",
+      "events",
+      "tutorials"
+  ]
+```
+
+##### Required properties
+
+At least one of the following section labels (case insensitive):
+
+```json
+    "classes"
+    "externals"
+    "events"
+    "global"
+    "interfaces"
+    "mixins"
+    "modules"
+    "namespaces"
+    "tutorials"
+```
+
+Unlisted labels will be ignored with a warning message.
+Leave this option undefined to include _all_ sections detected by `jsdoc`.
 
 
 #### `"menu": [{}, ...]` <a id="menu_option"></a>

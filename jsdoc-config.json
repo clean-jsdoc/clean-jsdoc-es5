@@ -22,13 +22,35 @@
         "destination": "demo/output",
         "recurse": true,
         "template": "./",
+        "tutorials": "./demo/src/tutorials",
         "theme_opts": {
+            "theme": "dynamic",
             "langNames": false,
+            "menuLocation": "down",
             "project": {
                 "title": "clean-jsdoc",
-                "version": "4.1.1",
+                "version": "4.2.0",
                 "repo": "https://github.com/rdipardo/clean-jsdoc-theme"
             },
+            "sections": [
+                "modules",
+                "classes",
+                "events",
+                "global",
+                "tutorials"
+            ],
+            "menu": [
+                {
+                    "title": "Blog",
+                    "link": "https://heredocs.io",
+                    "target": "_blank"
+                },
+                {
+                    "title": "Other Projects",
+                    "link": "https://bitbucket.org/rdipardo",
+                    "target": "_blank"
+                }
+            ],
             "meta": [
                 {
                     "name": "author",
