@@ -1,13 +1,23 @@
+## 4.2.1
+
+### Fixed
+- minor regression in menu link generation (due to [6c34f1c]): [cfd2e453c]
+
+[cfd2e453c]: https://github.com/rdipardo/clean-jsdoc-theme/commit/cfd2e453c
+
 ## 4.2.0
 
 ### Added
 - new option to list only selected [doc sections][] in the nav menu (ported from upstream)
-- new dynamic theme option: rdipardo/clean-jsdoc-theme@453a2a3
+- new dynamic theme option: [453a2a3]
 
 ### Fixed
-- several causes of improper HTML: rdipardo/clean-jsdoc-theme@6c34f1c, rdipardo/clean-jsdoc-theme@26f6b23
+- several causes of improper HTML: [6c34f1c], [26f6b23]
 
 [doc sections]: https://heredocs.io/clean-jsdoc-theme/#sections_option
+[453a2a3]: https://github.com/rdipardo/clean-jsdoc-theme/commit/453a2a3
+[6c34f1c]: https://github.com/rdipardo/clean-jsdoc-theme/commit/6c34f1c
+[26f6b23]: https://github.com/rdipardo/clean-jsdoc-theme/commit/26f6b23
 
 ## 4.1.1
 
