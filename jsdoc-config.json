@@ -42,8 +42,7 @@
             "menu": [
                 {
                     "title": "Blog",
-                    "link": "https://heredocs.io",
-                    "target": "_blank"
+                    "link": "https://heredocs.io"
                 },
                 {
                     "title": "Other Projects",

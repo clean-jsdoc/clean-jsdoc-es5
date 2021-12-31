@@ -376,11 +376,11 @@ function buildMenuNav(menu) {
 
     menu.forEach(item => {
         // Setting default value for optional parameter
-        let c = item.class || '';
+        let c = item.class && `${item.class} ` || '';
         const id = item.id || '';
         const target = item.target || '';
 
-        c += ' menu-link';
+        c += 'menu-link';
 
       m += `<li class="menu-li"><a href="${item.link}" class="${c}"`;
 
@@ -388,10 +388,10 @@ function buildMenuNav(menu) {
           m += ` id="${id}"`;
       }
       if (target) {
-          m += ` target="${target}">`;
+          m += ` target="${target}"`;
       }
 
-      m += `${item.title}</a></li>`;
+      m += `>${item.title}</a></li>`;
     });
 
     m += '</ul>';
