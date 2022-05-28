@@ -412,8 +412,8 @@ Distributed under the terms of the [MIT license][Read the MIT].
 [Chrome, Firefox, IE, Safari on macOS]: https://github.com/rdipardo/clean-jsdoc-theme/actions?query=workflow%3AIE
 [Chrome on Android, Safari on iOS Workflow]: https://github.com/rdipardo/clean-jsdoc-theme/workflows/Chrome%20on%20Android,%20Safari%20on%20iOS/badge.svg?branch=develop
 [Chrome on Android, Safari on iOS]: https://github.com/rdipardo/clean-jsdoc-theme/actions?query=workflow%3AAndroid
-[BrowserStack Status]: https://automate.browserstack.com/public-build/UmpiQjdrd0h6SGt6YlJYWUUvcERSRXNmZUpaR2pFVFJQb0I0MGwrM0dVcz0tLS9ENVVPc1I1eW5NQUF5MWFEUzUrOUE9PQ==--8a4ece5b7c6ffbe261a062d49079b8408b32760c
-[BrowserStack Status Badge]: https://automate.browserstack.com/badge.svg?badge_key=UmpiQjdrd0h6SGt6YlJYWUUvcERSRXNmZUpaR2pFVFJQb0I0MGwrM0dVcz0tLS9ENVVPc1I1eW5NQUF5MWFEUzUrOUE9PQ==--8a4ece5b7c6ffbe261a062d49079b8408b32760c
+[BrowserStack Status]: https://automate.browserstack.com/public-build/RkZCVWlFUndVc1c0dHFnLzA2V2pjZCtGTXBFc0N1ek9PeHpqWU1ZU1Z5cz0tLTBXbUxRbXVUQ21CSXRDQkRPcEoweVE9PQ==--2c08531eadafcbbf252ba6fce89db02023862cad
+[BrowserStack Status Badge]: https://automate.browserstack.com/badge.svg?badge_key=RkZCVWlFUndVc1c0dHFnLzA2V2pjZCtGTXBFc0N1ek9PeHpqWU1ZU1Z5cz0tLTBXbUxRbXVUQ21CSXRDQkRPcEoweVE9PQ==--2c08531eadafcbbf252ba6fce89db02023862cad
 [Read the MIT]: https://github.com/rdipardo/clean-jsdoc-theme/blob/master/LICENSE
 [Releases]: https://github.com/rdipardo/clean-jsdoc-theme/releases
 [Current Release]: https://img.shields.io/github/package-json/v/rdipardo/clean-jsdoc-theme?logo=github
