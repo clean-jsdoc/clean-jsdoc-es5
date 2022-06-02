@@ -204,11 +204,19 @@
 <script src="scripts/third-party/OverlayScrollbars.min.js"></script>
 <script>
   var options = JSON.parse('<?js= this.overlayScrollbar ?>')
-  var parsedOpts = []
-  for (var opt in options) {
-      parsedOpts.push(opt + ' = ' + options[opt.toString()])
-  }
-  console.log('Loaded OverlayScrollbars.js with options:', parsedOpts.join(', ') || 'none')
+  var optString = (function f(o) {
+    var optList =
+      Object.keys(o).reduce(
+        (function (a, k) { a.push([k, o[k]]); return a }), []);
+    return (optList.reduce(
+      (function (str, e) {
+        if (typeof (e[1]) === 'object')
+          return str += e[0] + ': { ' + f(e[1]) + ' }, ';
+        else
+          return str += [e[0]] + ': ' + e[1] + ', ';
+      }), '').slice(0, -2))
+  })(options)
+  console.log('Loaded OverlayScrollbars.js with options:', optString || 'none')
   document.addEventListener("DOMContentLoaded", function () {
       OverlayScrollbars(document.querySelectorAll('body'), options)
   })
