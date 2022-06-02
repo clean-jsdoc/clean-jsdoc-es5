@@ -517,7 +517,7 @@ function buildMemberNav({ items, itemHeading, itemsSeen, linktoFn, sectionName }
                     itemsNav += '<ul class="methods accordion-content">';
 
                     methods.forEach(method => {
-                        let name = method.longname.split('#');
+                        let name = method.longname.split(method.scope === 'static' ? '.' : '#');
                         const [first, last] = name;
                         const identifier = last ? ` &rtrif; ${last}` : '';
 
@@ -611,7 +611,7 @@ function buildNav(members) {
         [SECTION_TYPE.Modules]: buildMemberNav({
             'itemHeading': 'Modules',
             'items': members.modules,
-            'itemsSeen': {},
+            'itemsSeen': seen,
             'linktoFn': linkto,
             'sectionName': SECTION_TYPE.Modules
         }),

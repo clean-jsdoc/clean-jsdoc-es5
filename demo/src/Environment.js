@@ -6,6 +6,7 @@
  * ultrices fringilla sem. Sed laoreet tempor odio, elementum
  * scelerisque nunc aliquet quis.
  * @class
+ * @hideconstructor
  */
 class Environment {
     constructor() {

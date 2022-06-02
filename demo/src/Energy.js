@@ -3,6 +3,7 @@
  * rutrum. Mauris interdum neque id massa sollicitudin, fermentum
  * facilisis erat commodo. In at purus a risus aliquam faucibus.
  * @class
+ * @hideconstructor
  */
 class Energy {
     constructor() {
