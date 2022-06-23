@@ -167,7 +167,7 @@ function toggleAccordion(element, isImmediate) {
     const ids = getAccordionIdsFromLocalStorage();
 
 
-    allAccordion.forEach(item => {
+    Array.prototype.slice.call(allAccordion).forEach(item => {
         const parent = item.parentNode;
 
         item.addEventListener('click', () => {
@@ -212,5 +212,16 @@ function toggleNavbar(element, navbar) {
         navbarHam.addEventListener('click', () => {
             toggleNavbar(navbarHam, navbar);
         });
+    }
+})();
+
+/**
+ * CodePen hasn't supported IE 11 for a while
+ * https://github.com/philipwalton/flexbugs/issues/274
+ */
+(function() {
+    if (window.navigator.userAgent.indexOf('Trident/') > -1) {
+        Array.prototype.slice.call(document.querySelectorAll('.codepen-form')).forEach(item => {
+        item.parentNode.removeChild(item)});
     }
 })();

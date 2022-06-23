@@ -1,3 +1,3 @@
 @echo off
-del /S /Q /F demo\output
+rmdir /Q /S demo\output
 mkdir demo\output

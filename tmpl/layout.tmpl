@@ -64,7 +64,7 @@
     <script>
       if (window.matchMedia) {
         var styles = Array.prototype.slice.call(document.querySelectorAll('link[rel="stylesheet"]'))
-        var theme = styles.find(function(s) { return /(theme).*(light|dark).*\.css$/i.test(s.href) })
+        var theme = styles.filter(function(s) { return /(theme).*(light|dark).*\.css$/i.test(s.href) })[0]
         if (theme) {
           theme.href =
             matchMedia('(prefers-color-scheme: dark)').matches
@@ -74,7 +74,7 @@
           document.addEventListener("DOMContentLoaded", function () {
             var themeId = document.getElementById('clean-jsdoc-theme')
             if (themeId)
-              themeId.innerText = theme.href.split(/\W/).includes('dark') ? 'dark' : 'light'
+              themeId.innerText = theme.href.split(/\W/).indexOf('dark') > -1 ? 'dark' : 'light'
           })
         }
       }
