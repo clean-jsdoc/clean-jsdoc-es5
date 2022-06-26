@@ -222,6 +222,6 @@ function toggleNavbar(element, navbar) {
 (function() {
     if (window.navigator.userAgent.indexOf('Trident/') > -1) {
         Array.prototype.slice.call(document.querySelectorAll('.codepen-form')).forEach(item => {
-        item.parentNode.removeChild(item)});
+        item.parentNode.removeChild(item); });
     }
 })();
