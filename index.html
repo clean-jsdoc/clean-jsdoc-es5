@@ -5,12 +5,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="generator" content="jsdoc v3.6.7">
+    <meta name="generator" content="jsdoc v3.6.10">
     
       
         <meta name="author" content="Robert Di Pardo">
       
-        <meta name="description" content="A style-conscious fork of clean-jsdoc-theme">
+        <meta name="description" content="A fork of clean-jsdoc-theme with some backported features and IE 11 support">
       
         <meta name="attribution" content="Favicon made by https://www.freepik.com from https://www.flaticon.com">
       
@@ -32,7 +32,7 @@
     <script>
       if (window.matchMedia) {
         var styles = Array.prototype.slice.call(document.querySelectorAll('link[rel="stylesheet"]'))
-        var theme = styles.find(function(s) { return /(theme).*(light|dark).*\.css$/i.test(s.href) })
+        var theme = styles.filter(function(s) { return /(theme).*(light|dark).*\.css$/i.test(s.href) })[0]
         if (theme) {
           theme.href =
             matchMedia('(prefers-color-scheme: dark)').matches
@@ -42,7 +42,7 @@
           document.addEventListener("DOMContentLoaded", function () {
             var themeId = document.getElementById('clean-jsdoc-theme')
             if (themeId)
-              themeId.innerText = theme.href.split(/\W/).includes('dark') ? 'dark' : 'light'
+              themeId.innerText = theme.href.split(/\W/).indexOf('dark') > -1 ? 'dark' : 'light'
           })
         }
       }
@@ -130,13 +130,13 @@
 <nav id="navbar" class="navbar">
     
     <div class="gh-meta">
-    <p><b>Version</b> 4.2.1</p>
+    <p><b>Version</b> 4.2.2</p>
     <p>
       <a href="https://github.com/rdipardo/clean-jsdoc-theme" title="View project on GitHub"><span class="fa fa-github" aria-hidden="true"></span></a>
     </p>
     </div>
     
-    <div class="navbar-heading" id="navbar-heading"><a href="index.html"><h2 class="navbar-heading-text">README</h2></a></div><div class="search-box" id="search-box"><div class="search-box-input-container"><input class="search-box-input" type="text" placeholder="Search..." id="search-box-input" /><svg class="search-icon" aria-labelledby="search-icon"><use xlink:href="#search-icon"></use></svg></div><div class="search-item-container" id="search-item-container"><ul class="search-item-ul" id="search-item-ul"></ul></div></div><div class="sidebar-main-content" id="sidebar-main-content"><div class="accordion collapsed" id="3126830" > <h3 class="accordion-heading">Modules<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion collapsed child" id="4558862"><div class="accordion-heading child"><a href="module-itertools.html">itertools</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class="methods accordion-content"><li data-type="method"><a href="module-itertools.html#~frequencyOf">frequencyOf</a></li><li data-type="method"><a href="module-itertools.html#~sortBy">sortBy</a></li></ul></li></ul> </div><div class="accordion collapsed" id="5861756" > <h3 class="accordion-heading">Classes<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion collapsed child" id="6436367"><div class="accordion-heading child"><a href="Alive.html">Alive</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class="methods accordion-content"><li data-type="method"><a href="Alive.html#survive">survive</a></li></ul></li><li class="accordion collapsed child" id="3685284"><div class="accordion-heading child"><a href="Apple.html">Apple</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class="methods accordion-content"><li data-type="method"><a href="Apple.html#survive">survive</a></li></ul></li><li class="accordion-list" id="8306577"><a href="Energy.html">Energy</a></li><li class="accordion collapsed child" id="9520484"><div class="accordion-heading child"><a href="Environment.html">Environment</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class="methods accordion-content"><li data-type="method"><a href="Environment.html#start">start</a></li></ul></li><li class="accordion collapsed child" id="9894923"><div class="accordion-heading child"><a href="Tree.html">Tree</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class="methods accordion-content"><li data-type="method"><a href="Tree.html#crop">crop</a></li><li data-type="method"><a href="Tree.html#survive">survive</a></li></ul></li><li class="accordion-list" id="7109247"><a href="WeatherReading.html">WeatherReading</a></li></ul> </div><div class="accordion collapsed" id="1761984" > <h3 class="accordion-heading">Events<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion-list" id="9843044"><a href="Apple.html#event:beEaten">beEaten</a></li><li class="accordion-list" id="1011218"><a href="Environment.html#event:beforeDestroy">beforeDestroy</a></li></ul> </div><div class="accordion collapsed" id="9576798" > <h3 class="accordion-heading">Global<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion-list" id="2021336"><a href="global.html#EnergyUnit">EnergyUnit</a></li><li class="accordion-list" id="2026316"><a href="global.html#EnvironmentConfiguration">EnvironmentConfiguration</a></li><li class="accordion-list" id="7361242"><a href="global.html#fetchWeatherIcon">fetchWeatherIcon</a></li></ul> </div><div class="accordion collapsed" id="1138191" > <h3 class="accordion-heading">Tutorials<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion-list" id="770942"><a href="tutorial-Alive_.html">Alive</a></li><li class="accordion-list" id="9058162"><a href="tutorial-Apple_.html">Apple</a></li><li class="accordion-list" id="2566048"><a href="tutorial-Environment_.html">Environment</a></li><li class="accordion-list" id="1727419"><a href="tutorial-Other.html">Other</a></li></ul> </div><ul><li class="menu-li"><a href="https://heredocs.io" class="menu-link">Blog</a></li><li class="menu-li"><a href="https://bitbucket.org/rdipardo" class="menu-link" target="_blank">Other Projects</a></li></ul></div>
+    <div class="navbar-heading" id="navbar-heading"><a href="index.html"><h2 class="navbar-heading-text">README</h2></a></div><div class="search-box" id="search-box"><div class="search-box-input-container"><input class="search-box-input" type="text" placeholder="Search..." id="search-box-input" /><svg class="search-icon" aria-labelledby="search-icon"><use xlink:href="#search-icon"></use></svg></div><div class="search-item-container" id="search-item-container"><ul class="search-item-ul" id="search-item-ul"></ul></div></div><div class="sidebar-main-content" id="sidebar-main-content"><div class="accordion collapsed" id="2212370" > <h3 class="accordion-heading">Modules<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion collapsed child" id="5144639"><div class="accordion-heading child"><a href="module-itertools.html">itertools</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class="methods accordion-content"><li data-type="method"><a href="module-itertools.html#~frequencyOf">frequencyOf</a></li><li data-type="method"><a href="module-itertools.html#~sortBy">sortBy</a></li></ul></li></ul> </div><div class="accordion collapsed" id="2972430" > <h3 class="accordion-heading">Classes<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion collapsed child" id="4069710"><div class="accordion-heading child"><a href="Alive.html">Alive</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class="methods accordion-content"><li data-type="method"><a href="Alive.html#survive">survive</a></li></ul></li><li class="accordion collapsed child" id="719381"><div class="accordion-heading child"><a href="Apple.html">Apple</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class="methods accordion-content"><li data-type="method"><a href="Apple.html#survive">survive</a></li></ul></li><li class="accordion-list" id="5880118"><a href="Energy.html">Energy</a></li><li class="accordion collapsed child" id="2453096"><div class="accordion-heading child"><a href="Environment.html">Environment</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class="methods accordion-content"><li data-type="method"><a href="Environment.html#start">start</a></li></ul></li><li class="accordion collapsed child" id="715127"><div class="accordion-heading child"><a href="Tree.html">Tree</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class="methods accordion-content"><li data-type="method"><a href="Tree.html#crop">crop</a></li><li data-type="method"><a href="Tree.html#survive">survive</a></li></ul></li><li class="accordion-list" id="8908703"><a href="WeatherReading.html">WeatherReading</a></li></ul> </div><div class="accordion collapsed" id="8282115" > <h3 class="accordion-heading">Events<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion-list" id="8745275"><a href="Apple.html#event:beEaten">beEaten</a></li><li class="accordion-list" id="4737113"><a href="Environment.html#event:beforeDestroy">beforeDestroy</a></li></ul> </div><div class="accordion collapsed" id="719116" > <h3 class="accordion-heading">Global<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion-list" id="2982236"><a href="global.html#EnergyUnit">EnergyUnit</a></li><li class="accordion-list" id="1160907"><a href="global.html#EnvironmentConfiguration">EnvironmentConfiguration</a></li><li class="accordion-list" id="340819"><a href="global.html#fetchWeatherIcon">fetchWeatherIcon</a></li></ul> </div><div class="accordion collapsed" id="3296278" > <h3 class="accordion-heading">Tutorials<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion-list" id="5643450"><a href="tutorial-Alive_.html">Alive</a></li><li class="accordion-list" id="7058486"><a href="tutorial-Apple_.html">Apple</a></li><li class="accordion-list" id="1196986"><a href="tutorial-Environment_.html">Environment</a></li><li class="accordion-list" id="5888673"><a href="tutorial-Other.html">Other</a></li></ul> </div><ul><li class="menu-li"><a href="https://heredocs.io" class="menu-link">Blog</a></li><li class="menu-li"><a href="https://bitbucket.org/rdipardo" class="menu-link" target="_blank">Other Projects</a></li></ul></div>
 </nav>
 
 <div class="navbar-ham" id="navbar-ham">
@@ -172,7 +172,7 @@
 <p><a href="https://github.com/rdipardo/clean-jsdoc-theme/actions/workflows/publish.yml"><img src="https://github.com/rdipardo/clean-jsdoc-theme/actions/workflows/publish.yml/badge.svg" alt="Package Workflow"></a>
 <a href="https://github.com/rdipardo/clean-jsdoc-theme/actions?query=workflow%3AIE"><img src="https://github.com/rdipardo/clean-jsdoc-theme/workflows/Chrome,%20Firefox,%20IE,%20Safari%20on%20macOS/badge.svg?branch=develop" alt="Chrome, Firefox, IE, Safari on macOS Workflow"></a>
 <a href="https://github.com/rdipardo/clean-jsdoc-theme/actions?query=workflow%3AAndroid"><img src="https://github.com/rdipardo/clean-jsdoc-theme/workflows/Chrome%20on%20Android,%20Safari%20on%20iOS/badge.svg?branch=develop" alt="Chrome on Android, Safari on iOS Workflow"></a>
-<a href="https://automate.browserstack.com/public-build/UmpiQjdrd0h6SGt6YlJYWUUvcERSRXNmZUpaR2pFVFJQb0I0MGwrM0dVcz0tLS9ENVVPc1I1eW5NQUF5MWFEUzUrOUE9PQ==--8a4ece5b7c6ffbe261a062d49079b8408b32760c"><img src="https://automate.browserstack.com/badge.svg?badge_key=UmpiQjdrd0h6SGt6YlJYWUUvcERSRXNmZUpaR2pFVFJQb0I0MGwrM0dVcz0tLS9ENVVPc1I1eW5NQUF5MWFEUzUrOUE9PQ==--8a4ece5b7c6ffbe261a062d49079b8408b32760c" alt="BrowserStack Status Badge"></a>
+<a href="https://automate.browserstack.com/public-build/RkZCVWlFUndVc1c0dHFnLzA2V2pjZCtGTXBFc0N1ek9PeHpqWU1ZU1Z5cz0tLTBXbUxRbXVUQ21CSXRDQkRPcEoweVE9PQ==--2c08531eadafcbbf252ba6fce89db02023862cad"><img src="https://automate.browserstack.com/badge.svg?badge_key=RkZCVWlFUndVc1c0dHFnLzA2V2pjZCtGTXBFc0N1ek9PeHpqWU1ZU1Z5cz0tLTBXbUxRbXVUQ21CSXRDQkRPcEoweVE9PQ==--2c08531eadafcbbf252ba6fce89db02023862cad" alt="BrowserStack Status Badge"></a>
 <a href="https://github.com/rdipardo/clean-jsdoc-theme/releases"><img src="https://img.shields.io/github/package-json/v/rdipardo/clean-jsdoc-theme?logo=github" alt="Current Release"></a></p>
 </h3>
 <div align="center">
@@ -411,7 +411,7 @@ line to a <code>.npmrc</code> file in your <code>$HOME</code> directory:</p>
       &quot;tutorials&quot;
   ]
 </code></pre>
-<h5 id="required-properties-2">Required properties</h5>
+<h5 id="required-properties-1">Required properties</h5>
 <p>At least one of the following section labels (case insensitive):</p>
 <pre class="prettyprint source lang-json"><code>    &quot;classes&quot;
     &quot;externals&quot;
@@ -437,7 +437,7 @@ Leave this option undefined to include <em>all</em> sections detected by <code>j
     }
   ]
 </code></pre>
-<h5 id="required-properties-3">Required properties</h5>
+<h5 id="required-properties-2">Required properties</h5>
 <table>
 <thead>
 <tr>
@@ -456,7 +456,7 @@ Leave this option undefined to include <em>all</em> sections detected by <code>j
 </tr>
 </tbody>
 </table>
-<h5 id="optional-properties-2">Optional properties</h5>
+<h5 id="optional-properties-1">Optional properties</h5>
 <table>
 <thead>
 <tr>
@@ -492,7 +492,7 @@ Leave this option undefined to include <em>all</em> sections detected by <code>j
       }
     ]
 </code></pre>
-<h5 id="required-properties-4">Required properties</h5>
+<h5 id="required-properties-3">Required properties</h5>
 <p>Any valid combinaton of <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#Attributes">HTML metadata attributes</a>.</p>
 <h4 id="%22remote_assets%22%3A-%5B%7B%7D%2C-...%5D"><code>&quot;remote_assets&quot;: [{}, ...]</code>  <a id="remote_assets_option"></a></h4>
 <p>A list of <code>link</code> tag attributes for asset resources, e.g.</p>
@@ -509,7 +509,7 @@ Leave this option undefined to include <em>all</em> sections detected by <code>j
     }
   ]
 </code></pre>
-<h5 id="required-properties-5">Required properties</h5>
+<h5 id="required-properties-4">Required properties</h5>
 <table>
 <thead>
 <tr>
@@ -524,7 +524,7 @@ Leave this option undefined to include <em>all</em> sections detected by <code>j
 </tr>
 </tbody>
 </table>
-<h5 id="optional-properties-3">Optional properties <a id="optional_asset_attrs"></a></h5>
+<h5 id="optional-properties-2">Optional properties <a id="optional_asset_attrs"></a></h5>
 <table>
 <thead>
 <tr>
@@ -544,9 +544,13 @@ Leave this option undefined to include <em>all</em> sections detected by <code>j
 <td style="text-align:center">The CORS policy for the resource</td>
 <td style="text-align:center">string</td>
 </tr>
+<tr>
+<td style="text-align:center"><br/></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
 </tbody>
 </table>
-<br/>
 <p>Some assets will need additional <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#Attributes">link attributes</a> to load properly.</p>
 <p>As of version 2.0.0, this template can detect stylesheets and shortcut
 icons from the file extension in the <code>href</code>. Support for more media types
@@ -561,7 +565,7 @@ may be added in future releases.</p>
     }
   ]
 </code></pre>
-<h5 id="required-properties-6">Required properties</h5>
+<h5 id="required-properties-5">Required properties</h5>
 <table>
 <thead>
 <tr>
@@ -576,13 +580,13 @@ may be added in future releases.</p>
 </tr>
 </tbody>
 </table>
-<h5 id="optional-properties-4">Optional properties</h5>
+<h5 id="optional-properties-3">Optional properties</h5>
 <p>Mostly the same as <a href="#optional_asset_attrs"><code>remote_assets</code></a></p>
 <h4 id="%22overlay_scrollbar%22%3A-%7B-%22options%22%3A-%7B%7D-%7D"><code>&quot;overlay_scrollbar&quot;: { &quot;options&quot;: {} }</code> <a id="overlay_scrollbar_option"></a></h4>
 <p>Includes the <a href="https://kingsora.github.io/OverlayScrollbars/#!documentation/options">OverlayScrollbars</a> plugin.</p>
-<h5 id="required-properties-7">Required properties</h5>
+<h5 id="required-properties-6">Required properties</h5>
 <p>None. Simply passing an empty object will activate this feature.</p>
-<h5 id="optional-properties-5">Optional properties</h5>
+<h5 id="optional-properties-4">Optional properties</h5>
 <p>Any option supported by <a href="https://kingsora.github.io/OverlayScrollbars/#!documentation/options">OverlayScrollbars</a>.</p>
 <h4 id="%22codepen%22%3A-%7B-%22options%22%3A-%7B%7D-%7D"><code>&quot;codepen&quot;: { &quot;options&quot;: {} }</code> <a id="codepen_option"></a></h4>
 <p>Puts an &quot;Edit on CodePen&quot; button next to code snippets in <code>@example</code> sections.</p>
@@ -593,9 +597,9 @@ may be added in future releases.</p>
   }
 }
 </code></pre>
-<h5 id="required-properties-8">Required properties</h5>
+<h5 id="required-properties-7">Required properties</h5>
 <p>None. Simply passing an empty object will activate this feature.</p>
-<h5 id="optional-properties-6">Optional properties</h5>
+<h5 id="optional-properties-5">Optional properties</h5>
 <p>Any valid <a href="https://blog.codepen.io/documentation/prefill/#all-the-json-options-0">CodePen prefill option</a>.</p>
 <h2 id="testing">Testing</h2>
 <p>To preview a small demo website, first run:</p>
@@ -628,7 +632,7 @@ Copyright (c) 2020 <a href="https://github.com/rdipardo/">Robert Di Pardo</a></p
 
 <footer id="footer" class="footer">
   
-  Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> using the <a href="https://github.com/rdipardo/clean-jsdoc-theme">clean-jsdoc</a> <span id="clean-jsdoc-theme">dynamic</span> theme.
+  Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.10</a> using the <a href="https://github.com/rdipardo/clean-jsdoc-theme">clean-jsdoc</a> <span id="clean-jsdoc-theme">dynamic</span> theme.
   
 </footer>
 
@@ -654,11 +658,19 @@ Copyright (c) 2020 <a href="https://github.com/rdipardo/">Robert Di Pardo</a></p
 <script src="scripts/third-party/OverlayScrollbars.min.js"></script>
 <script>
   var options = JSON.parse('{"autoUpdate":false}')
-  var parsedOpts = []
-  for (var opt in options) {
-      parsedOpts.push(opt + ' = ' + options[opt.toString()])
-  }
-  console.log('Loaded OverlayScrollbars.js with options:', parsedOpts.join(', ') || 'none')
+  var optString = (function f(o) {
+    var optList =
+      Object.keys(o).reduce(
+        (function (a, k) { a.push([k, o[k]]); return a }), []);
+    return (optList.reduce(
+      (function (str, e) {
+        if (typeof (e[1]) === 'object')
+          return str += e[0] + ': { ' + f(e[1]) + ' }, ';
+        else
+          return str += [e[0]] + ': ' + e[1] + ', ';
+      }), '').slice(0, -2))
+  })(options)
+  console.log('Loaded OverlayScrollbars.js with options:', optString || 'none')
   document.addEventListener("DOMContentLoaded", function () {
       OverlayScrollbars(document.querySelectorAll('body'), options)
   })
