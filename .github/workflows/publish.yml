@@ -32,7 +32,7 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3.8.0
       if: ${{ startsWith(runner.os, 'Linux') }}
       with:
-        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
         enable_jekyll: false
         publish_dir: ./demo/output
         user_name: 'clean-jsdoc [action]'

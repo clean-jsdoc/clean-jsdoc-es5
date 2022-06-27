@@ -1,3 +1,16 @@
+## 4.2.2
+
+### Fixed
+- don't escape operators like `&` and `>` in source code pages [4cd6813]
+- remove all CodePen markup from code examples when browsing in IE, and
+  make the inline template scripts more backward-compatible [2a02216]
+
+### Changed
+- bump overlayscrollbars to 1.13.2
+
+[4cd6813]: https://github.com/rdipardo/clean-jsdoc-theme/commit/4cd6813
+[2a02216]: https://github.com/rdipardo/clean-jsdoc-theme/commit/2a02216
+
 ## 4.2.1
 
 ### Fixed

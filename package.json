@@ -1,7 +1,7 @@
 {
     "name": "@rdipardo/clean-jsdoc",
-    "version": "4.2.1",
-    "description": "A style-conscious fork of clean-jsdoc-theme",
+    "version": "4.2.2",
+    "description": "A fork of clean-jsdoc-theme with some backported features and IE 11 support",
     "main": "publish.js",
     "scripts": {
         "lint": "eslint --fix *.js static/scripts tests/specs",
