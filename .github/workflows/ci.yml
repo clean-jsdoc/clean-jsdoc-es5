@@ -1,8 +1,8 @@
-name: Chrome, Firefox, IE, Safari on macOS
+name: Desktop (LTS)
 on:
   push:
     branches:
-      - develop
+      - lts
       - '!dependabot/**'
   pull_request_target:
     types: [opened]

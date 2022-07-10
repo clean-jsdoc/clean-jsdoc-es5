@@ -1,8 +1,8 @@
-name: Chrome on Android, Safari on iOS
+name: Mobile (LTS)
 on:
   push:
     branches:
-      - develop
+      - lts
       - '!dependabot/**'
   pull_request_target:
     types: [opened]
