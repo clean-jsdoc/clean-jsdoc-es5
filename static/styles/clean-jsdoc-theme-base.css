@@ -189,8 +189,9 @@
 }
 
 .sidebar-main-content {
-    margin: 1rem;
+    margin: 1rem 0 1rem 1rem;
     overflow: auto;
+    padding-right: 1rem;
 }
 
 .accordion {
@@ -357,7 +358,11 @@ blockquote {
         right: 0;
         width: 100% !important;
     }
-
+    .sidebar-main-content {
+        margin: 1rem;
+        overflow: hidden;
+        padding-right: 0;
+    }
     .main-content,
     .footer {
         margin-left: 0 !important;

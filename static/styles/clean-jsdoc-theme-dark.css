@@ -44,16 +44,12 @@ h1 {
     border-bottom: 1px solid #333;
 }
 
-tt, code, kbd, samp {
-    background: #333;
-}
-
 .navbar-ham {
     background: #444;
 }
 
 .navbar-ham .first, .navbar-ham .second, .navbar-ham .third {
-    background: #fff;
+    background: #fff !important;
 }
 
 .search-box-input-container {
@@ -147,10 +143,6 @@ tt, code, kbd, samp {
     color: #fff;
 }
 
-.prettyprint.linenums li {
-    border-left: 3px #3f6f6f solid;
-}
-
 /* stylelint-disable */
 
 .prettyprint.linenums li.selected, .prettyprint.linenums li.selected * {
@@ -203,4 +195,13 @@ table .params thead tr, .params .params thead tr, .props .props thead tr {
 
 .gh-meta {
     color: #eee;
+}
+
+::-webkit-scrollbar-track {
+    background: #333;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #555;
+    outline: 0.06125rem solid #555;
 }

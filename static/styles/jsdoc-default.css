@@ -271,7 +271,8 @@ article ol {
 }
 
 .prettyprint.linenums li {
-    color: #f8f8f9;
+    border-left: 1px #3f6f6f solid;
+    color: #a0a0a0;
     min-height: 18px;
 }
 
@@ -372,6 +373,16 @@ tt, code, kbd, samp {
 .page-title {
     font-size: 30px;
     font-weight: 1000;
+}
+
+::-webkit-scrollbar {
+    width: .3125rem;
+    height: .3125rem
+}
+
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-track {
+    border-radius: 1rem
 }
 
 /* Make sure the README is readable! */
