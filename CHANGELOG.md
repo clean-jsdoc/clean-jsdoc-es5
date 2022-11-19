@@ -1,3 +1,13 @@
+## 4.4.0
+
+### Fixed
+- add a dependency on `@jsdoc/salty` for JSDoc v4 [6178729]
+
+### Changed
+- bump overlayscrollbars to 2.0.0
+
+[6178729]: https://github.com/rdipardo/clean-jsdoc-theme/commit/6178729
+
 ## 4.3.0
 
 ### Fixed
