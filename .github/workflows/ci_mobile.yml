@@ -1,8 +1,8 @@
-name: Mobile (LTS)
+name: Mobile
 on:
   push:
     branches:
-      - lts
+      - develop
       - '!dependabot/**'
   pull_request_target:
     types: [opened]

@@ -1,8 +1,8 @@
-name: Desktop (LTS)
+name: Desktop
 on:
   push:
     branches:
-      - lts
+      - develop
       - '!dependabot/**'
   pull_request_target:
     types: [opened]
