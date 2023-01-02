@@ -11,10 +11,10 @@
 
 <div align="center">
 
-![light_code_example](https://raw.githubusercontent.com/clean-jsdoc/clean-jsdoc-es5/lts/img/light_code_example.png)
-![light_doc_page](https://raw.githubusercontent.com/clean-jsdoc/clean-jsdoc-es5/lts/img/light_doc_example.png)
-![dark_code_example](https://raw.githubusercontent.com/clean-jsdoc/clean-jsdoc-es5/lts/img/dark_code_example.png)
-![dark_doc_page](https://raw.githubusercontent.com/clean-jsdoc/clean-jsdoc-es5/lts/img/dark_doc_example.png)
+![light_code_example](https://raw.githubusercontent.com/clean-jsdoc/clean-jsdoc-es5/main/img/light_code_example.png)
+![light_doc_page](https://raw.githubusercontent.com/clean-jsdoc/clean-jsdoc-es5/main/img/light_doc_example.png)
+![dark_code_example](https://raw.githubusercontent.com/clean-jsdoc/clean-jsdoc-es5/main/img/dark_code_example.png)
+![dark_doc_page](https://raw.githubusercontent.com/clean-jsdoc/clean-jsdoc-es5/main/img/dark_doc_example.png)
 </div>
 
 <hr/>
@@ -152,9 +152,10 @@ _All options must be defined under `opts.theme_opts` in your `.jsdoc.json`_
 | `search`       | enable fuzzy search using [Fuse.js][]               | bool         | `true`                             | `true`, `false`                               |
 | `menuLocation` | sets the location of the optional [external links menu](#menu_option) relative to the doc navigation menu &#91;2&#93; | string | `"up"` | `"up"`, `"down"` |
 | `langNames`    | display language names in code blocks               | bool         | `true`                             | `true`, `false`                               |
+| `moduleNames`  | show the module's name in the page's top heading    | bool         | `false`                            | `true`, `false`                               |
 | `title`        | the name of the home link to display on the nav bar | HTML string  | `"README"`                         | any valid HTML markup, or just a plain string |
 | `footer`       | a footer to display in the page layout              | HTML string  | JSDoc version, date and theme info | any valid HTML markup                         |
-| `inline_style` | inline CSS for the `head` of the page layout        | CSS string   | `null`                             | any valid CSS markup                          |
+| `inline_style` | inline CSS for the `<head>` of the page layout      | CSS string   | `null`                             | any valid CSS markup                          |
 
 <hr/>
 
@@ -231,7 +232,7 @@ A list of hyperlinks to add to the navigation bar, e.g.
   "menu": [
     {
       "title": "Website",
-      "link": "https://heredocs.io",
+      "link": "https://rdipardo.bitbucket.io,
       "target": "_blank",
       "class": "some-class",
       "id": "some-id"
@@ -424,10 +425,10 @@ Distributed under the terms of the [MIT license][Read the MIT].
 <!-- badges -->
 [Package Workflow]: https://github.com/clean-jsdoc/clean-jsdoc-es5/actions/workflows/publish.yml/badge.svg
 [Package]: https://github.com/clean-jsdoc/clean-jsdoc-es5/actions/workflows/publish.yml
-[Chrome, Firefox, IE, Safari on macOS Workflow]: https://github.com/clean-jsdoc/clean-jsdoc-es5/workflows/Chrome,%20Firefox,%20IE,%20Safari%20on%20macOS/badge.svg?branch=develop
-[Chrome, Firefox, IE, Safari on macOS]: https://github.com/clean-jsdoc/clean-jsdoc-es5/actions?query=workflow%3AIE
-[Chrome on Android, Safari on iOS Workflow]: https://github.com/clean-jsdoc/clean-jsdoc-es5/workflows/Chrome%20on%20Android,%20Safari%20on%20iOS/badge.svg?branch=develop
-[Chrome on Android, Safari on iOS]: https://github.com/clean-jsdoc/clean-jsdoc-es5/actions?query=workflow%3AAndroid
+[Chrome, Firefox, IE, Safari on macOS Workflow]: https://github.com/clean-jsdoc/clean-jsdoc-es5/actions/workflows/ci.yml/badge.svg?branch=develop
+[Chrome, Firefox, IE, Safari on macOS]: https://github.com/clean-jsdoc/clean-jsdoc-es5/actions/workflows/ci.yml
+[Chrome on Android, Safari on iOS Workflow]: https://github.com/clean-jsdoc/clean-jsdoc-es5/actions/workflows/ci_mobile.yml/badge.svg?branch=develop
+[Chrome on Android, Safari on iOS]: https://github.com/clean-jsdoc/clean-jsdoc-es5/actions/workflows/ci_mobile.yml
 [BrowserStack Status]: https://automate.browserstack.com/public-build/RkZCVWlFUndVc1c0dHFnLzA2V2pjZCtGTXBFc0N1ek9PeHpqWU1ZU1Z5cz0tLTBXbUxRbXVUQ21CSXRDQkRPcEoweVE9PQ==--2c08531eadafcbbf252ba6fce89db02023862cad
 [BrowserStack Status Badge]: https://automate.browserstack.com/badge.svg?badge_key=RkZCVWlFUndVc1c0dHFnLzA2V2pjZCtGTXBFc0N1ek9PeHpqWU1ZU1Z5cz0tLTBXbUxRbXVUQ21CSXRDQkRPcEoweVE9PQ==--2c08531eadafcbbf252ba6fce89db02023862cad
 [Read the MIT]: https://github.com/clean-jsdoc/clean-jsdoc-es5/blob/master/LICENSE

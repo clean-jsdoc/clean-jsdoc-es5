@@ -57,7 +57,7 @@
                 },
                 {
                     "name": "description",
-                    "content": "A fork of clean-jsdoc-theme with some backported features and IE 11 support"
+                    "content": "ES5 compatible fork of clean-jsdoc-theme"
                 },
                 {
                     "name": "attribution",

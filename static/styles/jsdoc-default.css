@@ -154,12 +154,11 @@ article ol {
 
 .details {
     margin: 1rem 0;
-    padding: 0.625rem 1rem;
 }
 
 .details .details-item-container {
     display: flex;
-    margin: 10px 0;
+    padding: 1rem 2rem;
 }
 
 .details dt {

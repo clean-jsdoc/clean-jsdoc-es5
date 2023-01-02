@@ -453,6 +453,7 @@ function getTheme() {
 function getLayoutOptions() {
     const themeName = themeOpts.theme || 'light';
     const hideLangNames = themeOpts.langNames !== undefined && !env.opts.theme_opts.langNames;
+    const displayModuleHeader = themeOpts.moduleNames || false;
     const noSearch = themeOpts.search !== undefined && !env.opts.theme_opts.search;
     const wantDate = defaultOpts.includeDate !== false;
     const wantOverlay = overlayScrollbarOptions() !== undefined;
@@ -460,6 +461,7 @@ function getLayoutOptions() {
     return {
         themeName,
         hideLangNames,
+        displayModuleHeader,
         noSearch,
         wantDate,
         wantOverlay
