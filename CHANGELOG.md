@@ -1,3 +1,16 @@
+## 4.5.0
+
+### BREAKING CHANGE
+- rename package to `@clean-jsdoc/clean-jsdoc-es5`
+
+### Added
+- displaying module names in top-level headings is now optional [a132d0d] (ported from upstream)
+
+### Fixed
+- the comma between source files and line references is now hyperlink style
+
+[a132d0d]: https://github.com/clean-jsdoc/clean-jsdoc-es5/commit/a132d0d
+
 ## 4.4.0
 
 ### Fixed

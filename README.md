@@ -173,7 +173,7 @@ Details of your project, e.g.
 ```json
   "project": {
       "title": "clean-jsdoc",
-      "version": "4.0.0",
+      "version": "4.5.0",
       "repo": "https://github.com/clean-jsdoc/clean-jsdoc-es5"
   }
 ```
@@ -232,7 +232,7 @@ A list of hyperlinks to add to the navigation bar, e.g.
   "menu": [
     {
       "title": "Website",
-      "link": "https://rdipardo.bitbucket.io,
+      "link": "https://rdipardo.bitbucket.io",
       "target": "_blank",
       "class": "some-class",
       "id": "some-id"
