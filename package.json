@@ -60,7 +60,7 @@
         "**/ua-parser-js": "1.0.33"
     },
     "engines": {
-        "node":">=v18.12.0",
+        "node":">=18.12.0",
         "npm": ">=9.0.0"
     },
     "publishConfig": {

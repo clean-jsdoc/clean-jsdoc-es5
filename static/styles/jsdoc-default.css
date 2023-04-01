@@ -340,10 +340,6 @@ article ol {
     font-weight: bold;
 }
 
-.params td, .props td {
-    white-space: nowrap;
-}
-
 .params td.description h4, .params td.description h5, .params td.description h6 {
     margin-left: 0;
 }

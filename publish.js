@@ -785,7 +785,11 @@ exports.publish = function(taffyData, opts, tutorials) {
     helper.setTutorials(tutorials);
 
     data = helper.prune(data);
-    data.sort('longname, version, since');
+
+    if (themeOpts.sort !== false) {
+        data.sort('longname, version, since');
+    }
+
     helper.addEventListeners(data);
 
     let sourceFiles = {};

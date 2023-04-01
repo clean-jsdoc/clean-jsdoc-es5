@@ -32,6 +32,7 @@
                 "version": "4.5.0",
                 "repo": "https://github.com/clean-jsdoc/clean-jsdoc-es5"
             },
+            "sort": false,
             "sections": [
                 "modules",
                 "classes",
