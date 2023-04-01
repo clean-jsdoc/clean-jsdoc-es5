@@ -1,3 +1,13 @@
+## 4.5.1
+
+### Added
+- sorting members by name is now optional [53ac387] (ported from upstream)
+
+### Fixed
+- parameter descriptions are now line-wrapped
+
+[53ac387]: https://github.com/clean-jsdoc/clean-jsdoc-es5/commit/53ac387
+
 ## 4.5.0
 
 ### BREAKING CHANGE
