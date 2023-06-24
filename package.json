@@ -1,6 +1,6 @@
 {
     "name": "@clean-jsdoc/clean-jsdoc-es5",
-    "version": "4.5.1",
+    "version": "4.5.2",
     "description": "ES5 compatible fork of clean-jsdoc-theme",
     "main": "publish.js",
     "scripts": {
