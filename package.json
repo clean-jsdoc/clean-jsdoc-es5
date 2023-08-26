@@ -54,7 +54,7 @@
         "fs-extra": "^9.1.0",
         "glob": "^7.1.6",
         "minify": "^6.0.1",
-        "overlayscrollbars": "^2.2.0"
+        "overlayscrollbars": "^2.3.0"
     },
     "resolutions": {
         "**/ua-parser-js": "1.0.33"
