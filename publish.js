@@ -747,14 +747,6 @@ exports.publish = function(taffyData, opts, tutorials) {
                         'ie': '11'
                     }
                 }
-            ],
-            [
-                'minify', {
-                    'evaluate': false,
-                    'removeDebugger': true,
-                    'removeUndefined': false,
-                    'undefinedToVoid': false
-                }
             ]
         ],
         'comments': false

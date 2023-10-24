@@ -40,27 +40,26 @@
         "@wdio/cli": "^7.32.0",
         "@wdio/jasmine-framework": "^7.32.0",
         "@wdio/local-runner": "^7.32.0",
-        "browserstack-local": "^1.5.3",
-        "concurrently": "^6.5.1",
-        "dotenv": "^8.2.0",
-        "eslint": "^8.28.0",
+        "browserstack-local": "^1.5.4",
+        "concurrently": "^8.2.1",
+        "dotenv": "^16.3.1",
+        "eslint": "^8.50.0",
         "express": "^4.17.1"
     },
     "dependencies": {
-        "@babel/core": "^7.22.5",
-        "@babel/preset-env": "^7.22.5",
+        "@babel/core": "^7.23.2",
+        "@babel/preset-env": "^7.23.2",
         "@jsdoc/salty": "^0.2.5",
-        "babel-preset-minify": "^0.5.2",
-        "fs-extra": "^9.1.0",
-        "glob": "^7.1.6",
-        "minify": "^6.0.1",
-        "overlayscrollbars": "^2.3.0"
+        "fs-extra": "^11.1.1",
+        "glob": "^10.3.3",
+        "minify": "<=9.0.0",
+        "overlayscrollbars": "^2.4.0"
     },
     "resolutions": {
         "**/ua-parser-js": "1.0.33"
     },
     "engines": {
-        "node":">=18.12.0",
+        "node": ">=18.12.0",
         "npm": ">=9.0.0"
     },
     "publishConfig": {
