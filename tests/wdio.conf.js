@@ -5,7 +5,7 @@ const browserstack = require('browserstack-local');
 exports.config = {
     'user': process.env.BROWSERSTACK_USERNAME,
     'key': process.env.BROWSERSTACK_ACCESS_KEY,
-    'specs': ['./tests/specs/desktop/**'],
+    'specs': [`${process.env.PWD}/tests/specs/desktop/**`],
     'capabilities': [
         {
             'browserName': 'IE',

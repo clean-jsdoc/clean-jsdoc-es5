@@ -4,7 +4,6 @@
         "es6": true,
         "jasmine": true
     },
-    "extends": ["eslint:recommended", "@jsdoc"],
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly",
