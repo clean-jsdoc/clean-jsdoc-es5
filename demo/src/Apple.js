@@ -3,11 +3,12 @@
  * lectus convallis sagittis. Suspendisse ac lectus dignissim, tincidunt
  * nisi quis, gravida metus.
  * @class
- * @extends Alive
+ * @augments Alive
  */
 class Apple extends Alive {
     constructor() {
         super();
+
         /**
          * Donec imperdiet dignissim
          * @type {string}

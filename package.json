@@ -4,7 +4,8 @@
     "description": "ES5 compatible fork of clean-jsdoc-theme",
     "main": "publish.js",
     "scripts": {
-        "lint": "eslint --fix *.js static/scripts tests/specs",
+        "lint:jsdoc": "eslint --no-ignore --fix -c .eslintrc.jsdoc.json demo/src/*.js",
+        "lint": "eslint --fix *.js static/scripts tests/specs && npm run lint:jsdoc",
         "test": "npm run lint && ./demo/clean && npx jsdoc -c jsdoc-config.json --verbose",
         "test:win": "npm run lint && demo\\clean && npx jsdoc -c jsdoc-config.json --verbose",
         "test:ui": "wdio run ./tests/wdio.conf.js",
@@ -43,6 +44,7 @@
         "concurrently": "^8.2.1",
         "dotenv": "^16.3.1",
         "eslint": "^8.50.0",
+        "eslint-plugin-jsdoc": "^46.8.2",
         "express": "^4.17.1"
     },
     "dependencies": {

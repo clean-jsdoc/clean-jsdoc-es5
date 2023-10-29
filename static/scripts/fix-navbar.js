@@ -21,4 +21,4 @@
     setNavbarMainContentHeight();
     // eslint-disable-next-line no-undef
     window.addEventListener('resize', setNavbarMainContentHeight);
-})();
+}());

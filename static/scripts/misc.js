@@ -80,7 +80,7 @@ function copyFunction (id) {
             `${langNameDiv}${langName.length ? codepenLink + copyToClipboard : ''}</div>`;
         allPre[i].setAttribute('id', id);
     }
-})();
+}());
 
 
 /**
@@ -177,7 +177,7 @@ function toggleAccordion(element, isImmediate) {
             toggleAccordion(parent, true);
         }
     });
-})();
+}());
 
 
 /**
@@ -213,7 +213,7 @@ function toggleNavbar(element, navbar) {
             toggleNavbar(navbarHam, navbar);
         });
     }
-})();
+}());
 
 /**
  * CodePen hasn't supported IE 11 for a while
@@ -224,4 +224,4 @@ function toggleNavbar(element, navbar) {
         Array.prototype.slice.call(document.querySelectorAll('.codepen-form')).forEach(item => {
         item.parentNode.removeChild(item); });
     }
-})();
+}());
