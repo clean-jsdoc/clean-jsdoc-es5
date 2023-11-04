@@ -24,7 +24,6 @@ var detailsKeys = [
 
 // Check if the default value is an object or array; if so, apply code highlighting
 if (data.defaultvalue && (data.defaultvaluetype === 'object' || data.defaultvaluetype === 'array')) {
-    data.defaultvalue = "<pre class=\"prettyprint\"><code>" + data.defaultvalue + "</code></pre>";
     defaultObjectClass = ' class="object-value"';
 }
 
@@ -120,7 +119,7 @@ for(; loopVar < detailsKeys.length; loopVar += 1) {
 
     <?js if (data.deprecated) { ?>
         <div class="details-item-container">
-            <dt class="important tag-deprecated">Deprecated:</dt><?js
+            <dt class="important tag-deprecated">Deprecated</dt><?js
                 if (data.deprecated === true) { ?><dd class="yes-def tag-deprecated"><ul class="dummy"><li>Yes</li></ul></dd><?js }
                 else { ?><dd><ul class="dummy"><li><?js= data.deprecated ?></li></ul></dd><?js }
             ?>

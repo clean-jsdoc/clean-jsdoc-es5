@@ -374,6 +374,10 @@ tt, code, kbd, samp {
     padding: 0.1rem 0.4rem;
 }
 
+li.object-value code {
+    padding: 0;
+}
+
 .mt-20 {
     margin-top: 1.25em;
 }
