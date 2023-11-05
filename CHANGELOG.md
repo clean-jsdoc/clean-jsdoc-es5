@@ -1,3 +1,12 @@
+## 4.5.3
+
+### Changed
+- bump overlayscrollbars to 2.4.0
+- drop babel-preset-minify from dependencies
+- default object values are now displayed as plain text [6ab8efc]
+
+[6ab8efc]: https://github.com/clean-jsdoc/clean-jsdoc-es5/commit/6ab8efc
+
 ## 4.5.2
 
 ### Changed
