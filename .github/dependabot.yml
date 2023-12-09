@@ -1,5 +1,18 @@
 version: 2
 updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    ignore:
+      - dependency-name: "minify"
+    schedule:
+      interval: "monthly"
+    groups:
+      webdriverio:
+        patterns:
+          - '@wdio/*'
+      babel:
+        patterns:
+          - '@babel/*'
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
