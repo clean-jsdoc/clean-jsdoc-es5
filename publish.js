@@ -9,7 +9,7 @@ const util = require('util');
 const fse = require('fs-extra');
 const babel = require('@babel/core');
 const glob = require('glob');
-const minify = require('minify');
+const { transform } = require('lightningcss');
 
 const { linkto, resolveAuthorLinks } = helper;
 const htmlsafe = src => helper.htmlsafe(src).replace(/>/gu, '&gt;');
@@ -717,27 +717,6 @@ function buildNav(members) {
 exports.publish = function(taffyData, opts, tutorials) {
     const conf = env.conf.templates || {};
     const templatePath = path.normalize(opts.template);
-    const minifyOpts = {
-        'html': {
-            'removeAttributeQuotes': false,
-            'removeComments': false,
-            'removeCommentsFromCDATA': false,
-            'removeCDATASectionsFromCDATA': false,
-            'removeEmptyElements': false,
-            'removeOptionalTags': false,
-            'useShortDoctype': false,
-            'removeStyleLinkTypeAttributes': false,
-            'removeScriptTypeAttributes': false,
-            'keepClosingSlash': true,
-            'html5': false
-        },
-        'css': {
-            'compatibility': '*'
-        },
-        'js': {
-            'ecma': 5
-        }
-    };
     const babelOpts = {
         'presets': [
             [
@@ -860,14 +839,18 @@ exports.publish = function(taffyData, opts, tutorials) {
          }
 
         if ((/(?<!(min))\.((css)|(html))$/iu).test(fileName) && !isThirdParty) {
-            minify(fileName, minifyOpts)
-                .then(min => {
-                    const minified = path.join(toDir, path.basename(fileName));
+            const minified = path.join(toDir, path.basename(fileName));
+            const input = fs.readFileSync(fileName, 'utf8');
 
-                    logger.info('Minifying: %s', minified);
-                    fs.writeFileSync(minified, min);
-                })
-                .catch(err => logger.error(err.message));
+            logger.info('Minifying: %s', minified);
+
+            const { code, _ } = transform({
+                filename: fileName,
+                code: Buffer.from(input),
+                minify: true,
+                sourceMap: false
+            });
+            fs.writeFileSync(minified, code);
         } else if ((/(?<!(min))\.(m?js*)$/iu).test(fileName) && !isThirdParty) {
             const compiled = path.join(toDir, path.basename(fileName));
 
