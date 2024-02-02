@@ -8,8 +8,54 @@ on:
     types: [opened]
 jobs:
   build:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
     steps:
+    - uses: actions/checkout@v4
+    - name: Set up node env
+      uses: actions/setup-node@v4
+      with:
+        node-version: current
+        cache: 'npm'
+    - name: Install dependencies
+      run: npm i && npm i --save-dev jsdoc
+    - name: Set file perms on dev script
+      if: ${{ !startsWith(runner.os, 'windows') }}
+      run: chmod +x ./demo/clean
+    - name: Build docs
+      if: ${{ !startsWith(runner.os, 'windows') }}
+      run: npm test
+    - name: Build docs on Windows
+      if: ${{ startsWith(runner.os, 'windows') }}
+      run: npm run test:win
+      shell: cmd
+    - name: Upload static content
+      if: ${{ startsWith(runner.os, 'linux') }}
+      uses: actions/upload-artifact@v4
+      with:
+        name: output
+        path: './demo/output'
+        retention-days: 1
+        if-no-files-found: error
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    - uses: actions/checkout@v4
+    - name: Set up node env
+      uses: actions/setup-node@v4
+      with:
+        node-version: current
+        cache: 'npm'
+    - name: Install dependencies
+      run: npm i --omit=optional
+    - name: Fetch static content
+      uses: actions/download-artifact@v4
+      with:
+        path: ${{ github.workspace }}/demo/output
+        merge-multiple: true
     - name: Set up BrowserStack env
       uses: browserstack/github-actions/setup-env@master
       with:
@@ -21,18 +67,6 @@ jobs:
         local-testing: start
         local-logging-level: false
         local-identifier: random
-    - uses: actions/checkout@v4
-    - name: Set up node env
-      uses: actions/setup-node@v4
-      with:
-        node-version: current
-        cache: 'npm'
-    - name: Install dependencies
-      run: npm i && npm i --save-dev jsdoc
-    - name: Set file perms on dev script
-      run: chmod +x ./demo/clean
-    - name: Build docs
-      run: npm test
     - name: Run Selenium tests
       env:
         BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
