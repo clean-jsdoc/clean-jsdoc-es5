@@ -4,7 +4,6 @@
 
 [![Package Workflow][]][Package]
 [![Chrome, Firefox, IE, Safari on macOS Workflow][]][Chrome, Firefox, IE, Safari on macOS]
-[![Chrome on Android, Safari on iOS Workflow][]][Chrome on Android, Safari on iOS]
 [![Current Release][]][Releases]
 </div>
 
@@ -433,8 +432,6 @@ Distributed under the terms of the [MIT license][Read the MIT].
 [Package]: https://github.com/clean-jsdoc/clean-jsdoc-es5/actions/workflows/publish.yml
 [Chrome, Firefox, IE, Safari on macOS Workflow]: https://github.com/clean-jsdoc/clean-jsdoc-es5/actions/workflows/ci.yml/badge.svg?branch=develop
 [Chrome, Firefox, IE, Safari on macOS]: https://github.com/clean-jsdoc/clean-jsdoc-es5/actions/workflows/ci.yml
-[Chrome on Android, Safari on iOS Workflow]: https://github.com/clean-jsdoc/clean-jsdoc-es5/actions/workflows/ci_mobile.yml/badge.svg?branch=develop
-[Chrome on Android, Safari on iOS]: https://github.com/clean-jsdoc/clean-jsdoc-es5/actions/workflows/ci_mobile.yml
 [Read the MIT]: https://github.com/clean-jsdoc/clean-jsdoc-es5/blob/master/LICENSE
 [Releases]: https://github.com/clean-jsdoc/clean-jsdoc-es5/releases
 [Current Release]: https://img.shields.io/github/package-json/v/clean-jsdoc/clean-jsdoc-es5?logo=github
