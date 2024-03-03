@@ -1,11 +1,16 @@
+## 4.6.1
+
+### Changed
+- bump overlayscrollbars to 2.4.7
+
+> [!Note]
+> This will be the last release to update `overlayscrollbars`, which [no longer supports IE](https://github.com/KingSora/OverlayScrollbars/releases/tag/v2.5.0).
+
 ## 4.6.0
 
 ### Changed
 - static CSS is now minified by [lightningcss](https://lightningcss.dev)
 - bump overlayscrollbars to 2.4.6
-
-**NOTE**
-This will be the last release to update `overlayscrollbars`, which [no longer supports IE](https://github.com/KingSora/OverlayScrollbars/releases/tag/v2.5.0).
 
 ## 4.5.3
 
