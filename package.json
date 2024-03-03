@@ -54,7 +54,7 @@
         "fs-extra": "^11.2.0",
         "glob": "^10.3.10",
         "lightningcss": "^1.24.0",
-        "overlayscrollbars": "<2.5.0"
+        "overlayscrollbars": "<2.6.0"
     },
     "optionalDependencies": {
         "lightningcss-darwin-arm64": "^1.24.0",
