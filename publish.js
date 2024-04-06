@@ -722,6 +722,7 @@ exports.publish = function(taffyData, opts, tutorials) {
             [
                 '@babel/preset-env',
                 {
+                    'modules': false,
                     'targets': {
                         'ie': '11'
                     }
