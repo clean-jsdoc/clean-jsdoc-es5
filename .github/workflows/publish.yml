@@ -32,16 +32,6 @@ jobs:
       if: ${{ startsWith(runner.os, 'windows') }}
       run: npm run test:win
       shell: cmd
-    - name: Publish Docs
-      uses: peaceiris/actions-gh-pages@v3.9.3
-      if: ${{ startsWith(runner.os, 'Linux') }}
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        enable_jekyll: false
-        publish_dir: ./demo/output
-        user_name: 'clean-jsdoc [action]'
-        user_email: 'clean-jsdoc@users.noreply.github.com'
-        commit_message: '${{ github.event.head_commit.message }}'
 
   publish:
     needs: build
