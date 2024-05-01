@@ -48,8 +48,8 @@
         "express": "^4.19.2"
     },
     "dependencies": {
-        "@babel/core": "^7.24.0",
-        "@babel/preset-env": "^7.24.0",
+        "@babel/core": "^7.24.5",
+        "@babel/preset-env": "^7.24.5",
         "@jsdoc/salty": "^0.2.7",
         "fs-extra": "^11.2.0",
         "glob": "^10.3.10",
