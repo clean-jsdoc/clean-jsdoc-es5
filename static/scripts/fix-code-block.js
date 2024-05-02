@@ -16,7 +16,6 @@
     }
 
     // subtracted 20 for extra padding.
-    // eslint-disable-next-line no-undef
     const divMaxHeight = window.innerHeight - pageTitleHeight - footerHeight - 80;
 
     setTimeout(() => {
@@ -31,11 +30,9 @@
             item.appendChild(divElement);
         });
 
-        // eslint-disable-next-line no-undef
         main.style.minHeight = `${window.innerHeight - footerHeight - 15}px`;
 
         // See if we have to move something into view
-        // eslint-disable-next-line no-undef
         const [, location] = window.location.href.split('#');
 
         if (location && location.length > 0) {

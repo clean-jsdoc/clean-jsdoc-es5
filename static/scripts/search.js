@@ -12,7 +12,6 @@ function checkClick(e) {
             hideSearchList();
         }, 60);
 
-        /* eslint-disable-next-line */
         window.removeEventListener('click', checkClick);
     }
 }
@@ -28,10 +27,8 @@ function search(list, _, keys, searchKey) {
         keys
     };
 
-    // eslint-disable-next-line no-undef
     const searchIndex = Fuse.createIndex(options.keys, list);
 
-    // eslint-disable-next-line no-undef
     const fuse = new Fuse(list, options, searchIndex);
 
     let result = fuse.search(searchKey);
@@ -51,7 +48,6 @@ function search(list, _, keys, searchKey) {
     }
 }
 
-/* eslint-disable-next-line */
 function setupSearch(list) {
     const inputBox = document.getElementById('search-box-input');
     const keys = ['title'];
@@ -70,7 +66,6 @@ function setupSearch(list) {
             search(list, null, keys, inputBox.value);
         }
 
-        /* eslint-disable-next-line */
         window.addEventListener('click', checkClick);
     });
 }

@@ -14,11 +14,9 @@
             heightToSubtract += searchBox.getBoundingClientRect().height;
         }
 
-        // eslint-disable-next-line no-undef
         sidebarMainContent.style.height += `${window.innerHeight - heightToSubtract}px`;
     }
 
     setNavbarMainContentHeight();
-    // eslint-disable-next-line no-undef
     window.addEventListener('resize', setNavbarMainContentHeight);
 }());
