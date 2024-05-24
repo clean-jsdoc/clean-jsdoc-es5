@@ -1,3 +1,10 @@
+## 4.7.0
+
+### Changed
+- page footer style has been synchronized with upstream [8deb882]
+
+[8deb882]: https://github.com/clean-jsdoc/clean-jsdoc-es5/commit/8deb882
+
 ## 4.6.1
 
 ### Changed

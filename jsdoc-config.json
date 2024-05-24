@@ -29,7 +29,7 @@
             "menuLocation": "down",
             "project": {
                 "title": "clean-jsdoc",
-                "version": "4.6.1",
+                "version": "4.7.0",
                 "repo": "https://github.com/clean-jsdoc/clean-jsdoc-es5"
             },
             "sort": false,
